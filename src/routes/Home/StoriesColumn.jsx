@@ -1,10 +1,15 @@
 import React from 'react';
+
 import styles from './storiesColumn.css';
+
+import iceboxIcon from './icebox-icon.png';
+import todoIcon from './todo-icon.png';
+import rocketIcon from './rocket-icon.png';
 
 const StoriesColumn = () => (
   <div className={styles.column}>
     <img
-      src={require('./snowflake-icon.png')}
+      src={iceboxIcon}
       className={styles.columnIcon}
       alt="test"
     />

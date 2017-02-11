@@ -1,5 +1,5 @@
 .column {
-  width: 15%;
+  width: 20%;
   padding: 20px;
   background: #FFF;
   border-radius: 8px;
@@ -7,11 +7,16 @@
   height: auto;
   float: left;
   margin: 10px;
+  text-align: center;
 }
 
 .columnIcon {
-  margin: 0 auto;
-  width: 50%;
+  margin-top: -50px;
+  width: 20%;
+  background: #FFF;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-radius: 50%;
 }
 
 .columnHead {
