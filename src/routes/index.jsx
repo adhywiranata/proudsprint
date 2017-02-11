@@ -9,7 +9,6 @@ const AppRouter = () => (
     <Route path="/">
       <IndexRoute component={Home} />
       <Route path="about" component={Home} />
-      <Route path="404" component={Page404} />
       <Route path="*" component={Page404} />
     </Route>
   </Router>
