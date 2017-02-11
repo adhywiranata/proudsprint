@@ -11954,6 +11954,10 @@ var _AuthContainer = __webpack_require__(112);
 
 var _AuthContainer2 = _interopRequireDefault(_AuthContainer);
 
+var _HomeDashboard = __webpack_require__(244);
+
+var _HomeDashboard2 = _interopRequireDefault(_HomeDashboard);
+
 var _Home = __webpack_require__(116);
 
 var _Home2 = _interopRequireDefault(_Home);
@@ -11975,7 +11979,7 @@ var AppRouter = function AppRouter() {
     _react2.default.createElement(
       _reactRouter.Route,
       { path: '/', component: _MainContainer2.default },
-      _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
+      _react2.default.createElement(_reactRouter.IndexRoute, { component: _HomeDashboard2.default }),
       _react2.default.createElement(_reactRouter.Route, { path: 'about', component: _Home2.default })
     ),
     _react2.default.createElement(
@@ -27128,6 +27132,171 @@ var _routes2 = _interopRequireDefault(_routes);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _reactDom2.default.render(_react2.default.createElement(_routes2.default, null), document.getElementById('root'));
+
+/***/ }),
+/* 244 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _homeDashboard = __webpack_require__(248);
+
+var _homeDashboard2 = _interopRequireDefault(_homeDashboard);
+
+var _HomeContainer = __webpack_require__(245);
+
+var _HomeContainer2 = _interopRequireDefault(_HomeContainer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var HomeDashboard = function HomeDashboard() {
+  return _react2.default.createElement(
+    'div',
+    { className: _homeDashboard2.default.wrapper },
+    _react2.default.createElement(_HomeContainer2.default, null)
+  );
+};
+
+exports.default = HomeDashboard;
+
+/***/ }),
+/* 245 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ProductBacklog = __webpack_require__(246);
+
+var _ProductBacklog2 = _interopRequireDefault(_ProductBacklog);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var HomeContainer = function (_Component) {
+  _inherits(HomeContainer, _Component);
+
+  function HomeContainer(props) {
+    _classCallCheck(this, HomeContainer);
+
+    var _this = _possibleConstructorReturn(this, (HomeContainer.__proto__ || Object.getPrototypeOf(HomeContainer)).call(this, props));
+
+    _this.state = {
+      stories: []
+    };
+    return _this;
+  }
+
+  _createClass(HomeContainer, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(_ProductBacklog2.default, null),
+        _react2.default.createElement(_ProductBacklog2.default, null),
+        _react2.default.createElement(_ProductBacklog2.default, null)
+      );
+    }
+  }]);
+
+  return HomeContainer;
+}(_react.Component);
+
+exports.default = HomeContainer;
+
+/***/ }),
+/* 246 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ProductBacklog = function ProductBacklog() {
+  return _react2.default.createElement(
+    'div',
+    null,
+    'test'
+  );
+};
+
+exports.default = ProductBacklog;
+
+/***/ }),
+/* 247 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(118)();
+// imports
+
+
+// module
+exports.push([module.i, ".homeDashboard__wrapper___2ge-P {\n  min-width: 100%;\n  padding: 20px;\n  box-sizing: border-box;\n  background: black;\n}\n", ""]);
+
+// exports
+exports.locals = {
+	"wrapper": "homeDashboard__wrapper___2ge-P"
+};
+
+/***/ }),
+/* 248 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(247);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(241)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!./../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./homeDashboard.css", function() {
+			var newContent = require("!!./../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./homeDashboard.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);
