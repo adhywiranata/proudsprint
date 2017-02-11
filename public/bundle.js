@@ -11962,8 +11962,10 @@ var AppRouter = function AppRouter() {
     { history: _reactRouter.browserHistory },
     _react2.default.createElement(
       _reactRouter.Route,
-      { path: '/', component: _Home2.default },
+      { path: '/' },
+      _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
       _react2.default.createElement(_reactRouter.Route, { path: 'about', component: _Home2.default }),
+      _react2.default.createElement(_reactRouter.Route, { path: '404', component: _2.default }),
       _react2.default.createElement(_reactRouter.Route, { path: '*', component: _2.default })
     )
   );
