@@ -1,0 +1,76 @@
+.columnItem {
+  width: 100%;
+  padding: 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  height: auto;
+  overflow: hidden;
+  display: inline-flex;
+}
+
+.columnItem:nth-last-child(1) {
+  border-bottom: 0px;
+}
+
+.columnItem:hover {
+  background: #FEFEFE;
+}
+
+.imageContainer {
+  width: 20%;
+  position: relative;
+  text-align: center;
+  background: #446CB3;
+}
+
+.ProfilePicture {
+  width: 100%;
+}
+
+.itemPersonName {
+  position: absolute;
+  width: 87%;
+  bottom: 5px;
+  left: 0;
+  background: #446CB3;
+  color: #FFF;
+  padding: 2px 5px;
+  font-size: 0.8em;
+}
+
+.itemContainer {
+  width: 75%;
+  padding: 0px 10px;
+}
+
+.itemTitle {
+  color: #3498DB;
+  text-decoration: none;
+  text-align: left;
+}
+
+.itemBadgeList {
+  width: 100%;
+  margin: 10px 0;
+  text-align: left;
+}
+
+.itemBadgeList > span {
+  color: #FFF;
+  border-radius: 5px;
+  padding: 3px 10px;
+  margin-right: 5px;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+.improvementBadge {
+  background: #4CA1AF;
+}
+
+.bugBadge {
+  background: #D64541;
+}
+
+.niceToHaveBadge {
+  background: #F4B350;
+}

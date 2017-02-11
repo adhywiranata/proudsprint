@@ -12637,6 +12637,10 @@ var _todoIcon = __webpack_require__(254);
 
 var _todoIcon2 = _interopRequireDefault(_todoIcon);
 
+var _StoryItem = __webpack_require__(256);
+
+var _StoryItem2 = _interopRequireDefault(_StoryItem);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var BacklogColumn = function BacklogColumn() {
@@ -12652,6 +12656,13 @@ var BacklogColumn = function BacklogColumn() {
       'div',
       { className: _storiesColumn2.default.columnHead },
       'Backlog'
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: _storiesColumn2.default.columnList },
+      [1, 2, 3, 4, 5, 6, 7, 8].map(function (item) {
+        return _react2.default.createElement(_StoryItem2.default, { key: item });
+      })
     )
   );
 };
@@ -12681,6 +12692,10 @@ var _rocketIcon = __webpack_require__(253);
 
 var _rocketIcon2 = _interopRequireDefault(_rocketIcon);
 
+var _StoryItem = __webpack_require__(256);
+
+var _StoryItem2 = _interopRequireDefault(_StoryItem);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var DeliveredColumn = function DeliveredColumn() {
@@ -12696,6 +12711,13 @@ var DeliveredColumn = function DeliveredColumn() {
       'div',
       { className: _storiesColumn2.default.columnHead },
       'Delivered'
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: _storiesColumn2.default.columnList },
+      [1, 2, 3, 4, 5, 6, 7, 8].map(function (item) {
+        return _react2.default.createElement(_StoryItem2.default, { key: item });
+      })
     )
   );
 };
@@ -12725,6 +12747,10 @@ var _iceboxIcon = __webpack_require__(252);
 
 var _iceboxIcon2 = _interopRequireDefault(_iceboxIcon);
 
+var _StoryItem = __webpack_require__(256);
+
+var _StoryItem2 = _interopRequireDefault(_StoryItem);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var IceboxColumn = function IceboxColumn() {
@@ -12740,6 +12766,13 @@ var IceboxColumn = function IceboxColumn() {
       'div',
       { className: _storiesColumn2.default.columnHead },
       'Icebox'
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: _storiesColumn2.default.columnList },
+      [1, 2, 3, 4, 5, 6, 7, 8].map(function (item) {
+        return _react2.default.createElement(_StoryItem2.default, { key: item });
+      })
     )
   );
 };
@@ -12803,7 +12836,7 @@ exports = module.exports = __webpack_require__(42)();
 
 
 // module
-exports.push([module.i, ".homeDashboard__wrapper___2ge-P {\n  min-width: 150%;\n  padding: 20px;\n  padding-top: 150px;\n  box-sizing: border-box;\n  background: #F5F5F5;\n  height: 100%;\n}\n", ""]);
+exports.push([module.i, ".homeDashboard__wrapper___2ge-P {\n  min-width: 150%;\n  padding: 20px;\n  padding-top: 150px;\n  box-sizing: border-box;\n  background: #FCFCFC;\n  height: 100%;\n  display: inline-flex;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -12819,13 +12852,14 @@ exports = module.exports = __webpack_require__(42)();
 
 
 // module
-exports.push([module.i, ".storiesColumn__column___1LA8b {\n  width: 20%;\n  padding: 20px;\n  background: #FFF;\n  border-radius: 8px;\n  border: 1px solid rgba(0, 0, 0, .1);\n  height: auto;\n  float: left;\n  margin: 10px;\n  text-align: center;\n}\n\n.storiesColumn__columnIcon___3CTYW {\n  margin-top: -70px;\n  width: 20%;\n  background: rgba(255, 255, 255, .6);\n  padding: 10px;\n  border: 1px solid rgba(0, 0, 0, .15);\n  border-radius: 10%;\n}\n\n.storiesColumn__columnHead___2pyVZ {\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, ".storiesColumn__column___1LA8b {\n  width: 400px;\n  padding: 0px;\n  background: #FFF;\n  border-radius: 8px;\n  border: 1px solid rgba(0, 0, 0, .1);\n  height: auto;\n  margin: 10px;\n  text-align: center;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 0.8em;\n  cursor: pointer;\n}\n\n.storiesColumn__columnIcon___3CTYW {\n  margin-top: -70px;\n  width: 20%;\n  background: rgba(255, 255, 255, .6);\n  padding: 10px;\n  border: 1px solid rgba(0, 0, 0, .15);\n  border-radius: 10%;\n}\n\n.storiesColumn__columnHead___2pyVZ {\n  text-align: center;\n  font-size: 1.5em;\n  text-transform: uppercase;\n  margin-top: 10px;\n  border-bottom: 1px solid rgba(0, 0, 0, .1);\n  padding-bottom: 10px;\n}\n\n.storiesColumn__columnList___2t9PO {\n  height: 400px;\n  overflow-y: scroll;\n  border-bottom: 1px solid rgba(0, 0, 0, .1);\n}\n", ""]);
 
 // exports
 exports.locals = {
 	"column": "storiesColumn__column___1LA8b",
 	"columnIcon": "storiesColumn__columnIcon___3CTYW",
-	"columnHead": "storiesColumn__columnHead___2pyVZ"
+	"columnHead": "storiesColumn__columnHead___2pyVZ",
+	"columnList": "storiesColumn__columnList___2t9PO"
 };
 
 /***/ }),
@@ -27476,6 +27510,129 @@ var _routes2 = _interopRequireDefault(_routes);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _reactDom2.default.render(_react2.default.createElement(_routes2.default, null), document.getElementById('root'));
+
+/***/ }),
+/* 256 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _storyItem = __webpack_require__(258);
+
+var _storyItem2 = _interopRequireDefault(_storyItem);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var StoryItem = function StoryItem() {
+  return _react2.default.createElement(
+    'div',
+    { className: _storyItem2.default.columnItem },
+    _react2.default.createElement(
+      'div',
+      { className: _storyItem2.default.imageContainer },
+      _react2.default.createElement('img', {
+        className: _storyItem2.default.ProfilePicture,
+        src: 'http://socialpro.miguelvasquez.net/public/avatar/large_johndoe_18gu2qv.jpg',
+        alt: 's'
+      }),
+      _react2.default.createElement(
+        'span',
+        { className: _storyItem2.default.itemPersonName },
+        'Jose'
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: _storyItem2.default.itemContainer },
+      _react2.default.createElement(
+        'p',
+        { className: _storyItem2.default.itemTitle },
+        'Add to Cart should be available on all pages containing a product and several other functionalities'
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: _storyItem2.default.itemBadgeList },
+        _react2.default.createElement(
+          'span',
+          { className: _storyItem2.default.improvementBadge },
+          'Improvement'
+        ),
+        _react2.default.createElement(
+          'span',
+          { className: _storyItem2.default.bugBadge },
+          'Bug'
+        ),
+        _react2.default.createElement(
+          'span',
+          { className: _storyItem2.default.niceToHaveBadge },
+          'Nice to Have'
+        )
+      )
+    )
+  );
+};
+
+exports.default = StoryItem;
+
+/***/ }),
+/* 257 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(42)();
+// imports
+
+
+// module
+exports.push([module.i, ".storyItem__columnItem___wKqug {\n  width: 100%;\n  padding: 0px;\n  border-bottom: 1px solid rgba(0, 0, 0, .1);\n  height: auto;\n  overflow: hidden;\n  display: inline-flex;\n}\n\n.storyItem__columnItem___wKqug:nth-last-child(1) {\n  border-bottom: 0px;\n}\n\n.storyItem__columnItem___wKqug:hover {\n  background: #FEFEFE;\n}\n\n.storyItem__imageContainer___2xAe6 {\n  width: 20%;\n  position: relative;\n  text-align: center;\n  background: #446CB3;\n}\n\n.storyItem__ProfilePicture___1tWQD {\n  width: 100%;\n}\n\n.storyItem__itemPersonName___H_EdG {\n  position: absolute;\n  width: 87%;\n  bottom: 5px;\n  left: 0;\n  background: #446CB3;\n  color: #FFF;\n  padding: 2px 5px;\n  font-size: 0.8em;\n}\n\n.storyItem__itemContainer___3DyiN {\n  width: 75%;\n  padding: 0px 10px;\n}\n\n.storyItem__itemTitle___3rymR {\n  color: #3498DB;\n  text-decoration: none;\n  text-align: left;\n}\n\n.storyItem__itemBadgeList___2bk4f {\n  width: 100%;\n  margin: 10px 0;\n  text-align: left;\n}\n\n.storyItem__itemBadgeList___2bk4f > span {\n  color: #FFF;\n  border-radius: 5px;\n  padding: 3px 10px;\n  margin-right: 5px;\n  font-size: 0.8em;\n  cursor: pointer;\n}\n\n.storyItem__improvementBadge___3HJ3o {\n  background: #4CA1AF;\n}\n\n.storyItem__bugBadge___23krb {\n  background: #D64541;\n}\n\n.storyItem__niceToHaveBadge___13Ct4 {\n  background: #F4B350;\n}\n", ""]);
+
+// exports
+exports.locals = {
+	"columnItem": "storyItem__columnItem___wKqug",
+	"imageContainer": "storyItem__imageContainer___2xAe6",
+	"ProfilePicture": "storyItem__ProfilePicture___1tWQD",
+	"itemPersonName": "storyItem__itemPersonName___H_EdG",
+	"itemContainer": "storyItem__itemContainer___3DyiN",
+	"itemTitle": "storyItem__itemTitle___3rymR",
+	"itemBadgeList": "storyItem__itemBadgeList___2bk4f",
+	"improvementBadge": "storyItem__improvementBadge___3HJ3o",
+	"bugBadge": "storyItem__bugBadge___23krb",
+	"niceToHaveBadge": "storyItem__niceToHaveBadge___13Ct4"
+};
+
+/***/ }),
+/* 258 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(257);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(72)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!./../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./storyItem.css", function() {
+			var newContent = require("!!./../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./storyItem.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);

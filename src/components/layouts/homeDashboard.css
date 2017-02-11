@@ -3,6 +3,7 @@
   padding: 20px;
   padding-top: 150px;
   box-sizing: border-box;
-  background: #F5F5F5;
+  background: #FCFCFC;
   height: 100%;
+  display: inline-flex;
 }
