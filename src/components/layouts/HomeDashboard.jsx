@@ -2,13 +2,15 @@ import React from 'react';
 
 import styles from './homeDashboard.css';
 
-import StoriesColumn from '../../routes/Home/StoriesColumn';
+import IceboxColumn from '../../routes/Home/IceboxColumn';
+import BacklogColumn from '../../routes/Home/BacklogColumn';
+import DeliveredColumn from '../../routes/Home/DeliveredColumn';
 
 const HomeDashboard = () => (
   <div className={styles.wrapper}>
-    <StoriesColumn />
-    <StoriesColumn />
-    <StoriesColumn />
+    <IceboxColumn />
+    <BacklogColumn />
+    <DeliveredColumn />
   </div>
 );
 
