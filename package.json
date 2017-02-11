@@ -20,10 +20,11 @@
   "homepage": "https://github.com/adhywiranata/proudsprint#readme",
   "dependencies": {
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "precss": "^1.4.0",
+    "autoprefixer": "^6.7.2"
   },
   "devDependencies": {
-    "autoprefixer": "^6.7.2",
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
     "babel-preset-es2015": "^6.22.0",
@@ -34,7 +35,6 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.9.0",
     "postcss-loader": "^1.2.2",
-    "precss": "^1.4.0",
     "webpack": "^2.2.1"
   }
 }
