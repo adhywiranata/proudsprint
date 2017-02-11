@@ -13,6 +13,14 @@ module.exports = {
           presets: ['es2015', 'react'],
         },
       },
+      {
+        test: /\.css$/,
+        loaders: [
+          'style-loader',
+          'css-loader?importLoaders=1',
+          'postcss-loader',
+        ],
+      },
     ],
   },
 };
