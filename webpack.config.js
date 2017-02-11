@@ -3,6 +3,9 @@ module.exports = {
   output: {
     filename: 'public/bundle.js',
   },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
   module: {
     loaders: [
       {
@@ -12,6 +15,10 @@ module.exports = {
         query: {
           presets: ['es2015', 'react'],
         },
+      },
+      {
+        test: /\.html$/,
+        loader: 'file?name=[name].[ext]',
       },
       {
         test: /\.css$/,
