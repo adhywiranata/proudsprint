@@ -2,6 +2,8 @@ import React from 'react';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 
 import Home from './Home';
+import AuthLayout from '../components/layouts/AuthLayout';
+import Auth from './Auth';
 import Page404 from './Errors/404';
 
 const AppRouter = () => (
@@ -9,8 +11,11 @@ const AppRouter = () => (
     <Route path="/">
       <IndexRoute component={Home} />
       <Route path="about" component={Home} />
-      <Route path="*" component={Page404} />
     </Route>
+    <Route path="/login" component={AuthLayout}>
+      <IndexRoute component={Auth} />
+    </Route>
+    <Route path="*" component={Page404} />
   </Router>
 );
 
