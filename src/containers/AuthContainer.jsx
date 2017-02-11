@@ -1,14 +1,14 @@
 import React from 'react';
 
-const AuthLayout = props => (
+const AuthContainer = props => (
   <div>
     <h1>Auth Layout</h1>
     { props.children }
   </div>
 );
 
-AuthLayout.propTypes = {
+AuthContainer.propTypes = {
   children: React.PropTypes.element.isRequired,
 };
 
-export default AuthLayout;
+export default AuthContainer;
