@@ -13,7 +13,7 @@ const AppRouter = () => (
   <Router history={browserHistory}>
     <Route path="/" component={MainContainer}>
       <IndexRoute component={HomeContainer} />
-      <Route path="about" component={Home} />
+      <Route path="about" component={HomeContainer} />
     </Route>
     <Route path="/login" component={AuthContainer}>
       <IndexRoute component={Auth} />

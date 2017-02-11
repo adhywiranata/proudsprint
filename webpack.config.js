@@ -18,7 +18,11 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        loader: 'file?name=[name].[ext]',
+        loader: 'file-loader?name=[name].[ext]',
+      },
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader?limit=25000&name=./public/assets/images/[hash].[ext]',
       },
       {
         test: /\.css$/,
