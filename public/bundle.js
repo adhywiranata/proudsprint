@@ -11950,9 +11950,9 @@ var _Home = __webpack_require__(114);
 
 var _Home2 = _interopRequireDefault(_Home);
 
-var _AuthLayout = __webpack_require__(111);
+var _AuthContainer = __webpack_require__(111);
 
-var _AuthLayout2 = _interopRequireDefault(_AuthLayout);
+var _AuthContainer2 = _interopRequireDefault(_AuthContainer);
 
 var _Auth = __webpack_require__(112);
 
@@ -11976,7 +11976,7 @@ var AppRouter = function AppRouter() {
     ),
     _react2.default.createElement(
       _reactRouter.Route,
-      { path: '/login', component: _AuthLayout2.default },
+      { path: '/login', component: _AuthContainer2.default },
       _react2.default.createElement(_reactRouter.IndexRoute, { component: _Auth2.default })
     ),
     _react2.default.createElement(_reactRouter.Route, { path: '*', component: _2.default })
@@ -12012,7 +12012,7 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var AuthLayout = function AuthLayout(props) {
+var AuthContainer = function AuthContainer(props) {
   return _react2.default.createElement(
     'div',
     null,
@@ -12025,11 +12025,11 @@ var AuthLayout = function AuthLayout(props) {
   );
 };
 
-AuthLayout.propTypes = {
+AuthContainer.propTypes = {
   children: _react2.default.PropTypes.element.isRequired
 };
 
-exports.default = AuthLayout;
+exports.default = AuthContainer;
 
 /***/ }),
 /* 112 */
