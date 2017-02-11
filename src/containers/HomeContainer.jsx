@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import ProductBacklog from '../routes/Home/ProductBacklog';
+import HomeDashboard from '../components/layouts/HomeDashboard';
 
 class HomeContainer extends Component {
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this.state = {
       stories: [],
     };
@@ -12,9 +12,7 @@ class HomeContainer extends Component {
   render() {
     return (
       <div>
-        <ProductBacklog />
-        <ProductBacklog />
-        <ProductBacklog />
+        <HomeDashboard />
       </div>
     );
   }

@@ -2,11 +2,13 @@ import React from 'react';
 
 import styles from './homeDashboard.css';
 
-import HomeContainer from '../../containers/HomeContainer';
+import StoriesColumn from '../../routes/Home/StoriesColumn';
 
 const HomeDashboard = () => (
   <div className={styles.wrapper}>
-    <HomeContainer />
+    <StoriesColumn />
+    <StoriesColumn />
+    <StoriesColumn />
   </div>
 );
 

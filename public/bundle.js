@@ -11954,9 +11954,9 @@ var _AuthContainer = __webpack_require__(112);
 
 var _AuthContainer2 = _interopRequireDefault(_AuthContainer);
 
-var _HomeDashboard = __webpack_require__(244);
+var _HomeContainer = __webpack_require__(245);
 
-var _HomeDashboard2 = _interopRequireDefault(_HomeDashboard);
+var _HomeContainer2 = _interopRequireDefault(_HomeContainer);
 
 var _Home = __webpack_require__(116);
 
@@ -11979,7 +11979,7 @@ var AppRouter = function AppRouter() {
     _react2.default.createElement(
       _reactRouter.Route,
       { path: '/', component: _MainContainer2.default },
-      _react2.default.createElement(_reactRouter.IndexRoute, { component: _HomeDashboard2.default }),
+      _react2.default.createElement(_reactRouter.IndexRoute, { component: _HomeContainer2.default }),
       _react2.default.createElement(_reactRouter.Route, { path: 'about', component: _Home2.default })
     ),
     _react2.default.createElement(
@@ -27152,9 +27152,9 @@ var _homeDashboard = __webpack_require__(248);
 
 var _homeDashboard2 = _interopRequireDefault(_homeDashboard);
 
-var _HomeContainer = __webpack_require__(245);
+var _StoriesColumn = __webpack_require__(249);
 
-var _HomeContainer2 = _interopRequireDefault(_HomeContainer);
+var _StoriesColumn2 = _interopRequireDefault(_StoriesColumn);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27162,7 +27162,9 @@ var HomeDashboard = function HomeDashboard() {
   return _react2.default.createElement(
     'div',
     { className: _homeDashboard2.default.wrapper },
-    _react2.default.createElement(_HomeContainer2.default, null)
+    _react2.default.createElement(_StoriesColumn2.default, null),
+    _react2.default.createElement(_StoriesColumn2.default, null),
+    _react2.default.createElement(_StoriesColumn2.default, null)
   );
 };
 
@@ -27185,9 +27187,9 @@ var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ProductBacklog = __webpack_require__(246);
+var _HomeDashboard = __webpack_require__(244);
 
-var _ProductBacklog2 = _interopRequireDefault(_ProductBacklog);
+var _HomeDashboard2 = _interopRequireDefault(_HomeDashboard);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27200,10 +27202,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var HomeContainer = function (_Component) {
   _inherits(HomeContainer, _Component);
 
-  function HomeContainer(props) {
+  function HomeContainer(props, context) {
     _classCallCheck(this, HomeContainer);
 
-    var _this = _possibleConstructorReturn(this, (HomeContainer.__proto__ || Object.getPrototypeOf(HomeContainer)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (HomeContainer.__proto__ || Object.getPrototypeOf(HomeContainer)).call(this, props, context));
 
     _this.state = {
       stories: []
@@ -27217,9 +27219,7 @@ var HomeContainer = function (_Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(_ProductBacklog2.default, null),
-        _react2.default.createElement(_ProductBacklog2.default, null),
-        _react2.default.createElement(_ProductBacklog2.default, null)
+        _react2.default.createElement(_HomeDashboard2.default, null)
       );
     }
   }]);
@@ -27230,33 +27230,7 @@ var HomeContainer = function (_Component) {
 exports.default = HomeContainer;
 
 /***/ }),
-/* 246 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(5);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var ProductBacklog = function ProductBacklog() {
-  return _react2.default.createElement(
-    'div',
-    null,
-    'test'
-  );
-};
-
-exports.default = ProductBacklog;
-
-/***/ }),
+/* 246 */,
 /* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -27265,7 +27239,7 @@ exports = module.exports = __webpack_require__(118)();
 
 
 // module
-exports.push([module.i, ".homeDashboard__wrapper___2ge-P {\n  min-width: 100%;\n  padding: 20px;\n  box-sizing: border-box;\n  background: black;\n}\n", ""]);
+exports.push([module.i, ".homeDashboard__wrapper___2ge-P {\n  min-width: 200%;\n  padding: 20px;\n  padding-top: 100px;\n  box-sizing: border-box;\n  background: #F5F5F5;\n  height: 100%;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -27290,6 +27264,86 @@ if(false) {
 	if(!content.locals) {
 		module.hot.accept("!!./../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./homeDashboard.css", function() {
 			var newContent = require("!!./../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./homeDashboard.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 249 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _storiesColumn = __webpack_require__(251);
+
+var _storiesColumn2 = _interopRequireDefault(_storiesColumn);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var StoriesColumn = function StoriesColumn() {
+  return _react2.default.createElement(
+    'div',
+    { className: _storiesColumn2.default.column },
+    _react2.default.createElement('img', { src: 'public/assets/images/snowflake-icon.png', className: _storiesColumn2.default.columnIcon }),
+    _react2.default.createElement(
+      'div',
+      { className: _storiesColumn2.default.columnHead },
+      'Icebox'
+    )
+  );
+};
+
+exports.default = StoriesColumn;
+
+/***/ }),
+/* 250 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(118)();
+// imports
+
+
+// module
+exports.push([module.i, ".storiesColumn__column___1LA8b {\n  width: 15%;\n  padding: 20px;\n  background: #FFF;\n  border-radius: 8px;\n  border: 1px solid rgba(0, 0, 0, .1);\n  height: auto;\n  float: left;\n  margin: 10px;\n}\n\n.storiesColumn__columnIcon___3CTYW {\n  margin: 0 auto;\n  width: 50%;\n}\n\n.storiesColumn__columnHead___2pyVZ {\n  text-align: center;\n}\n", ""]);
+
+// exports
+exports.locals = {
+	"column": "storiesColumn__column___1LA8b",
+	"columnIcon": "storiesColumn__columnIcon___3CTYW",
+	"columnHead": "storiesColumn__columnHead___2pyVZ"
+};
+
+/***/ }),
+/* 251 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(250);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(241)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!./../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./storiesColumn.css", function() {
+			var newContent = require("!!./../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./storiesColumn.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});

@@ -3,8 +3,7 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 
 import MainContainer from '../containers/MainContainer';
 import AuthContainer from '../containers/AuthContainer';
-
-import HomeDashboard from '../components/layouts/HomeDashboard';
+import HomeContainer from '../containers/HomeContainer';
 
 import Home from './Home';
 import Auth from './Auth';
@@ -13,7 +12,7 @@ import Page404 from './Errors/404';
 const AppRouter = () => (
   <Router history={browserHistory}>
     <Route path="/" component={MainContainer}>
-      <IndexRoute component={HomeDashboard} />
+      <IndexRoute component={HomeContainer} />
       <Route path="about" component={Home} />
     </Route>
     <Route path="/login" component={AuthContainer}>

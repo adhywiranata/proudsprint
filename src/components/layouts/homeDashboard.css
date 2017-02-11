@@ -1,6 +1,8 @@
 .wrapper {
-  min-width: 100%;
+  min-width: 200%;
   padding: 20px;
+  padding-top: 100px;
   box-sizing: border-box;
-  background: black;
+  background: #F5F5F5;
+  height: 100%;
 }

@@ -1,0 +1,19 @@
+.column {
+  width: 15%;
+  padding: 20px;
+  background: #FFF;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, .1);
+  height: auto;
+  float: left;
+  margin: 10px;
+}
+
+.columnIcon {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.columnHead {
+  text-align: center;
+}
