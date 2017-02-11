@@ -1,14 +1,16 @@
 import React from 'react';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 
-import Home from './Home';
+import MainContainer from '../containers/MainContainer';
 import AuthContainer from '../containers/AuthContainer';
+
+import Home from './Home';
 import Auth from './Auth';
 import Page404 from './Errors/404';
 
 const AppRouter = () => (
   <Router history={browserHistory}>
-    <Route path="/">
+    <Route path="/" component={MainContainer}>
       <IndexRoute component={Home} />
       <Route path="about" component={Home} />
     </Route>
