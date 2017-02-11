@@ -14,4 +14,3 @@ app.get('*', (request, response) => {
 });
 
 app.listen(port);
-console.log(`server started on port ${port}`);
