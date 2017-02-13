@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './storiesColumn.css';
-import iceboxIcon from './icebox-icon.png';
+import iceboxIcon from './images/icebox-icon.png';
 
 import StoryItem from './StoryItem';
 

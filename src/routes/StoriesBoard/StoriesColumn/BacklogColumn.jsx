@@ -1,11 +1,11 @@
 import React from 'react';
 
 import styles from './storiesColumn.css';
-import todoIcon from './todo-icon.png';
+import todoIcon from './images/todo-icon.png';
 
 import StoryItem from './StoryItem';
 
-const BacklogColumn = () => (
+const BacklogColumn = props => (
   <div className={styles.column}>
     <img
       src={todoIcon}
@@ -14,9 +14,22 @@ const BacklogColumn = () => (
     />
     <div className={styles.columnHead}>Backlog</div>
     <div className={styles.columnList}>
-      { [1, 2, 3, 4, 5, 6, 7, 8].map(item => <StoryItem key={item} />) }
+      { props.backlogStories.map(item => <StoryItem key={item} />) }
     </div>
   </div>
 );
+
+BacklogColumn.propTypes = {
+  backlogStories: React.PropTypes.arrayOf(
+    React.PropTypes.shape({
+      _id: React.PropTypes.number.isRequired,
+      category: React.PropTypes.string.isRequired,
+      user: React.PropTypes.string,
+      story: React.PropTypes.string,
+      tags: React.PropTypes.arrayOf(React.PropTypes.string),
+      createdAt: React.PropTypes.string,
+    }),
+  ).isRequired,
+};
 
 export default BacklogColumn;

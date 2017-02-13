@@ -10,13 +10,18 @@ import DoneColumn from './StoriesColumn/DoneColumn';
 
 const Home = (props) => {
   const iceboxStories = props.stories.filter(story => story.category === 'icebox');
+  const backlogStories = props.stories.filter(story => story.category === 'backlog');
+  const currentStories = props.stories.filter(story => story.category === 'current');
+  const deliveredStories = props.stories.filter(story => story.category === 'delivered');
+  const doneStories = props.stories.filter(story => story.category === 'done');
+
   return (
     <div className={styles.wrapper}>
       <IceboxColumn iceboxStories={iceboxStories} />
-      <BacklogColumn />
-      <CurrentColumn />
-      <DeliveredColumn />
-      <DoneColumn />
+      <BacklogColumn backlogStories={backlogStories} />
+      <CurrentColumn currentStories={currentStories} />
+      <DeliveredColumn deliveredStories={deliveredStories} />
+      <DoneColumn doneStories={doneStories} />
     </div>
   );
 };
