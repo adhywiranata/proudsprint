@@ -12545,8 +12545,13 @@ var Navbar = function Navbar() {
     { className: _navbar2.default.navbar },
     _react2.default.createElement(
       'div',
-      null,
+      { className: _navbar2.default.active },
       'Stories'
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      'Users'
     ),
     _react2.default.createElement(
       'div',
@@ -13158,11 +13163,12 @@ exports = module.exports = __webpack_require__(22)();
 
 
 // module
-exports.push([module.i, ".navbar__navbar___L9BoO {\n  background: #FFF;\n  color: #222;\n  height: auto;\n  overflow: hidden;\n  width: 100%;\n  padding: 5px 20px 0px 20px;\n  box-sizing: border-box;\n}\n\n.navbar__navbar___L9BoO > div {\n  float: left;\n  margin: 5px 10px 0px 10px;\n  cursor: pointer;\n  border-bottom: 3px solid #2C3E50;\n  padding-bottom: 10px;\n}\n", ""]);
+exports.push([module.i, ".navbar__navbar___L9BoO {\n  background: #FFF;\n  color: #222;\n  height: auto;\n  overflow: hidden;\n  width: 100%;\n  padding: 5px 20px 0px 20px;\n  box-sizing: border-box;\n  border-bottom: 1px solid rgba(0, 0, 0, .1);\n}\n\n.navbar__navbar___L9BoO > div {\n  float: left;\n  margin-top: 5px;\n  cursor: pointer;\n  padding: 0 20px;\n  padding-bottom: 10px;\n}\n\n.navbar__navbar___L9BoO > .navbar__active___3xaza {\n  border-bottom: 3px solid #2C3E50;\n}\n", ""]);
 
 // exports
 exports.locals = {
-	"navbar": "navbar__navbar___L9BoO"
+	"navbar": "navbar__navbar___L9BoO",
+	"active": "navbar__active___3xaza"
 };
 
 /***/ }),
@@ -13210,7 +13216,7 @@ exports = module.exports = __webpack_require__(22)();
 
 
 // module
-exports.push([module.i, ".storyItem__columnItem___wKqug {\n  width: 100%;\n  padding: 0px;\n  border-bottom: 1px solid rgba(0, 0, 0, .1);\n  height: auto;\n  overflow: hidden;\n  display: inline-flex;\n}\n\n.storyItem__columnItem___wKqug:nth-last-child(1) {\n  border-bottom: 0px;\n}\n\n.storyItem__columnItem___wKqug:hover {\n  background: #FEFEFE;\n}\n\n.storyItem__imageContainer___2xAe6 {\n  width: 20%;\n  position: relative;\n  text-align: center;\n  background: #446CB3;\n}\n\n.storyItem__ProfilePicture___1tWQD {\n  width: 100%;\n}\n\n.storyItem__itemPersonName___H_EdG {\n  position: absolute;\n  width: 87%;\n  bottom: 5px;\n  left: 0;\n  background: #446CB3;\n  color: #FFF;\n  padding: 2px 5px;\n  font-size: 0.8em;\n}\n\n.storyItem__itemContainer___3DyiN {\n  width: 75%;\n  padding: 0px 10px;\n}\n\n.storyItem__itemTitle___3rymR {\n  color: #3498DB;\n  text-decoration: none;\n  text-align: left;\n}\n\n.storyItem__itemBadgeList___2bk4f {\n  width: 100%;\n  margin: 10px 0;\n  text-align: left;\n}\n\n.storyItem__itemBadgeList___2bk4f > span {\n  color: #FFF;\n  border-radius: 5px;\n  padding: 3px 10px;\n  margin-right: 5px;\n  font-size: 0.8em;\n  cursor: pointer;\n}\n\n.storyItem__improvementBadge___3HJ3o {\n  background: #4CA1AF;\n}\n\n.storyItem__bugBadge___23krb {\n  background: #D64541;\n}\n\n.storyItem__niceToHaveBadge___13Ct4 {\n  background: #F4B350;\n}\n", ""]);
+exports.push([module.i, ".storyItem__columnItem___wKqug {\n  width: 100%;\n  padding: 0px;\n  border-bottom: 1px solid rgba(0, 0, 0, .1);\n  height: auto;\n  overflow: hidden;\n  display: inline-flex;\n}\n\n.storyItem__columnItem___wKqug:nth-last-child(0) {\n  border-bottom: 0px;\n}\n\n.storyItem__columnItem___wKqug:hover {\n  background: #FAFAFA;\n}\n\n.storyItem__imageContainer___2xAe6 {\n  width: 20%;\n  position: relative;\n  text-align: center;\n  background: #446CB3;\n}\n\n.storyItem__ProfilePicture___1tWQD {\n  width: 100%;\n}\n\n.storyItem__itemPersonName___H_EdG {\n  position: absolute;\n  width: 87%;\n  bottom: 5px;\n  left: 0;\n  background: #446CB3;\n  color: #FFF;\n  padding: 2px 5px;\n  font-size: 0.8em;\n}\n\n.storyItem__itemContainer___3DyiN {\n  width: 75%;\n  padding: 0px 10px;\n}\n\n.storyItem__itemTitle___3rymR {\n  color: #3498DB;\n  text-decoration: none;\n  text-align: left;\n}\n\n.storyItem__itemBadgeList___2bk4f {\n  width: 100%;\n  margin: 10px 0;\n  text-align: left;\n}\n\n.storyItem__itemBadgeList___2bk4f > span {\n  color: #FFF;\n  border-radius: 5px;\n  padding: 3px 10px;\n  margin-right: 5px;\n  font-size: 0.8em;\n  cursor: pointer;\n}\n\n.storyItem__improvementBadge___3HJ3o {\n  background: #4CA1AF;\n}\n\n.storyItem__bugBadge___23krb {\n  background: #D64541;\n}\n\n.storyItem__niceToHaveBadge___13Ct4 {\n  background: #F4B350;\n}\n", ""]);
 
 // exports
 exports.locals = {

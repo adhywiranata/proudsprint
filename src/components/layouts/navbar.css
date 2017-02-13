@@ -6,12 +6,17 @@
   width: 100%;
   padding: 5px 20px 0px 20px;
   box-sizing: border-box;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 
 .navbar > div {
   float: left;
-  margin: 5px 10px 0px 10px;
+  margin-top: 5px;
   cursor: pointer;
-  border-bottom: 3px solid #2C3E50;
+  padding: 0 20px;
   padding-bottom: 10px;
+}
+
+.navbar > .active {
+  border-bottom: 3px solid #2C3E50;
 }

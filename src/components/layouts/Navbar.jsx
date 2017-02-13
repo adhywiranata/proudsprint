@@ -4,7 +4,8 @@ import styles from './navbar.css';
 
 const Navbar = () => (
   <div className={styles.navbar}>
-    <div>Stories</div>
+    <div className={styles.active}>Stories</div>
+    <div>Users</div>
     <div>Metrics</div>
   </div>
 );
