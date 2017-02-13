@@ -1,9 +1,13 @@
 import React from 'react';
 import styles from './header.css';
 
+import Topbar from './Topbar';
+import Navbar from './Navbar';
+
 const Header = () => (
   <div className={styles.header}>
-    <span className={styles.logo}>ProudSprint</span>
+    <Topbar />
+    <Navbar />
   </div>
 );
 
