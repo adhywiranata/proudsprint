@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HomeDashboard from '../components/layouts/HomeDashboard';
+import StoriesBoard from '../routes/StoriesBoard';
 
 class HomeContainer extends Component {
   constructor(props, context) {
@@ -31,7 +31,7 @@ class HomeContainer extends Component {
   render() {
     return (
       <div>
-        <HomeDashboard stories={this.state.stories} />
+        <StoriesBoard stories={this.state.stories} />
       </div>
     );
   }

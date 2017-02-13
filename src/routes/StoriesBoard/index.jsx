@@ -1,14 +1,14 @@
 import React from 'react';
 
-import styles from './homeDashboard.css';
+import styles from './index.css';
 
-import IceboxColumn from '../../routes/Home/IceboxColumn';
-import BacklogColumn from '../../routes/Home/BacklogColumn';
-import CurrentColumn from '../../routes/Home/CurrentColumn';
-import DeliveredColumn from '../../routes/Home/DeliveredColumn';
-import DoneColumn from '../../routes/Home/DoneColumn';
+import IceboxColumn from './StoriesColumn/IceboxColumn';
+import BacklogColumn from './StoriesColumn/BacklogColumn';
+import CurrentColumn from './StoriesColumn/CurrentColumn';
+import DeliveredColumn from './StoriesColumn/DeliveredColumn';
+import DoneColumn from './StoriesColumn/DoneColumn';
 
-const HomeDashboard = (props) => {
+const Home = (props) => {
   const iceboxStories = props.stories.filter(story => story.category === 'icebox');
   return (
     <div className={styles.wrapper}>
@@ -21,7 +21,7 @@ const HomeDashboard = (props) => {
   );
 };
 
-HomeDashboard.propTypes = {
+Home.propTypes = {
   stories: React.PropTypes.arrayOf(
     React.PropTypes.shape({
       _id: React.PropTypes.number.isRequired,
@@ -34,4 +34,4 @@ HomeDashboard.propTypes = {
   ).isRequired,
 };
 
-export default HomeDashboard;
+export default Home;
