@@ -14,7 +14,7 @@ const DoneColumn = props => (
     />
     <div className={styles.columnHead}>Done</div>
     <div className={styles.columnList}>
-      { props.doneStories.map(item => <StoryItem key={item} />) }
+      { props.doneStories.map(item => <StoryItem key={item} {...item} />) }
     </div>
   </div>
 );

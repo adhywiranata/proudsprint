@@ -14,7 +14,7 @@ const DeliveredColumn = props => (
     />
     <div className={styles.columnHead}>Delivered</div>
     <div className={styles.columnList}>
-      { props.deliveredStories.map(item => <StoryItem key={item} />) }
+      { props.deliveredStories.map(item => <StoryItem key={item} {...item} />) }
     </div>
   </div>
 );

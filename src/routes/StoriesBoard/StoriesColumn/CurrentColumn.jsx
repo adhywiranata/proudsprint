@@ -14,7 +14,7 @@ const CurrentColumn = props => (
     />
     <div className={styles.columnHead}>On Progress</div>
     <div className={styles.columnList}>
-      { props.currentStories.map(item => <StoryItem key={item} />) }
+      { props.currentStories.map(item => <StoryItem key={item} {...item} />) }
     </div>
   </div>
 );

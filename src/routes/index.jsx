@@ -5,7 +5,6 @@ import MainContainer from '../containers/MainContainer';
 import AuthContainer from '../containers/AuthContainer';
 import HomeContainer from '../containers/HomeContainer';
 
-import Home from './Home';
 import Auth from './Auth';
 import Page404 from './Errors/404';
 

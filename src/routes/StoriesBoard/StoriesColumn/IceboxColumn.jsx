@@ -14,7 +14,7 @@ const IceboxColumn = props => (
     />
     <div className={styles.columnHead}>Icebox</div>
     <div className={styles.columnList}>
-      { props.iceboxStories.map(item => <StoryItem key={item} />) }
+      { props.iceboxStories.map(item => <StoryItem key={item} {...item} />) }
     </div>
   </div>
 );

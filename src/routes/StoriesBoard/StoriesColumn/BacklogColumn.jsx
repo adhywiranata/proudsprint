@@ -14,7 +14,7 @@ const BacklogColumn = props => (
     />
     <div className={styles.columnHead}>Backlog</div>
     <div className={styles.columnList}>
-      { props.backlogStories.map(item => <StoryItem key={item} />) }
+      { props.backlogStories.map(item => <StoryItem key={item} {...item} />) }
     </div>
   </div>
 );

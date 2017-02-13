@@ -1,8 +1,8 @@
 import React from 'react';
 
-import styles from './storyItem.css';
+import styles from './index.css';
 
-const StoryItem = () => (
+const StoryItem = props => (
   <div className={styles.columnItem}>
     <div className={styles.imageContainer}>
       <img
@@ -10,12 +10,11 @@ const StoryItem = () => (
         src="http://socialpro.miguelvasquez.net/public/avatar/large_johndoe_18gu2qv.jpg"
         alt="s"
       />
-      <span className={styles.itemPersonName}>Jose</span>
+      <span className={styles.itemPersonName}>{ props.user }</span>
     </div>
     <div className={styles.itemContainer}>
       <p className={styles.itemTitle}>
-        Add to Cart should be available on all pages containing a product
-        and several other functionalities
+        { props.story }
       </p>
       <div className={styles.itemBadgeList}>
         <span className={styles.improvementBadge}>Improvement</span>
@@ -25,5 +24,9 @@ const StoryItem = () => (
     </div>
   </div>
 );
+
+StoryItem.propTypes = {
+  story: React.PropTypes.string.isRequired,
+};
 
 export default StoryItem;
