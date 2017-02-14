@@ -7,6 +7,7 @@ import BacklogColumn from './StoriesColumn/BacklogColumn';
 import CurrentColumn from './StoriesColumn/CurrentColumn';
 import DeliveredColumn from './StoriesColumn/DeliveredColumn';
 import DoneColumn from './StoriesColumn/DoneColumn';
+import StoryItemDetails from './StoryItemDetails';
 
 const Home = (props) => {
   const iceboxStories = props.stories.filter(story => story.category === 'icebox');
@@ -22,6 +23,7 @@ const Home = (props) => {
       <CurrentColumn currentStories={currentStories} />
       <DeliveredColumn deliveredStories={deliveredStories} />
       <DoneColumn doneStories={doneStories} />
+      <StoryItemDetails />
     </div>
   );
 };

@@ -27,6 +27,7 @@ const StoryItem = props => (
 
 StoryItem.propTypes = {
   story: React.PropTypes.string.isRequired,
+  user: React.PropTypes.string.isRequired,
 };
 
 export default StoryItem;

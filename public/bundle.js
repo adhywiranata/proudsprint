@@ -3964,7 +3964,8 @@ var StoryItem = function StoryItem(props) {
 };
 
 StoryItem.propTypes = {
-  story: _react2.default.PropTypes.string.isRequired
+  story: _react2.default.PropTypes.string.isRequired,
+  user: _react2.default.PropTypes.string.isRequired
 };
 
 exports.default = StoryItem;
@@ -13136,6 +13137,10 @@ var _DoneColumn = __webpack_require__(126);
 
 var _DoneColumn2 = _interopRequireDefault(_DoneColumn);
 
+var _StoryItemDetails = __webpack_require__(268);
+
+var _StoryItemDetails2 = _interopRequireDefault(_StoryItemDetails);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Home = function Home(props) {
@@ -13162,7 +13167,8 @@ var Home = function Home(props) {
     _react2.default.createElement(_BacklogColumn2.default, { backlogStories: backlogStories }),
     _react2.default.createElement(_CurrentColumn2.default, { currentStories: currentStories }),
     _react2.default.createElement(_DeliveredColumn2.default, { deliveredStories: deliveredStories }),
-    _react2.default.createElement(_DoneColumn2.default, { doneStories: doneStories })
+    _react2.default.createElement(_DoneColumn2.default, { doneStories: doneStories }),
+    _react2.default.createElement(_StoryItemDetails2.default, null)
   );
 };
 
@@ -13188,7 +13194,7 @@ exports = module.exports = __webpack_require__(22)();
 
 
 // module
-exports.push([module.i, ".header__header___10QLq {\n  background: white;\n  height: auto;\n  position: fixed;\n  top: 0;\n  width: 100%;\n}\n", ""]);
+exports.push([module.i, ".header__header___10QLq {\n  background: white;\n  height: auto;\n  position: fixed;\n  z-index: 997;\n  top: 0;\n  width: 100%;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -13238,7 +13244,7 @@ exports = module.exports = __webpack_require__(22)();
 
 
 // module
-exports.push([module.i, ".index__columnItem___1j49I {\n  width: 100%;\n  padding: 0px;\n  border-bottom: 1px solid rgba(0, 0, 0, .1);\n  min-height: 100px;\n  height: auto;\n  overflow: hidden;\n  display: inline-flex;\n}\n\n.index__columnItem___1j49I:nth-last-child(0) {\n  border-bottom: 0px;\n}\n\n.index__columnItem___1j49I:hover {\n  background: #FAFAFA;\n}\n\n.index__imageContainer___1EePz {\n  width: 20%;\n  position: relative;\n  text-align: center;\n  background: #446CB3;\n}\n\n.index__ProfilePicture___332oq {\n  width: 100%;\n}\n\n.index__itemPersonName___PcjTm {\n  position: absolute;\n  width: 87%;\n  bottom: 0px;\n  left: 0;\n  background: #446CB3;\n  color: #FFF;\n  padding: 3px 5px;\n  font-size: 0.8em;\n}\n\n.index__itemContainer___4wQS5 {\n  width: 75%;\n  padding: 0px 10px;\n}\n\n.index__itemTitle___2doQe {\n  color: #3498DB;\n  text-decoration: none;\n  text-align: left;\n}\n\n.index__itemBadgeList___1vDrR {\n  width: 100%;\n  margin: 10px 0;\n  text-align: left;\n}\n\n.index__itemBadgeList___1vDrR > span {\n  color: #FFF;\n  border-radius: 5px;\n  padding: 3px 10px;\n  margin-right: 5px;\n  font-size: 0.8em;\n  cursor: pointer;\n}\n\n.index__improvementBadge___3PZ5T {\n  background: #4CA1AF;\n}\n\n.index__bugBadge___87Xfa {\n  background: #D64541;\n}\n\n.index__niceToHaveBadge___2R0Mi {\n  background: #F4B350;\n}\n", ""]);
+exports.push([module.i, ".index__columnItem___1j49I {\n  width: 100%;\n  padding: 0px;\n  border-bottom: 1px solid rgba(0, 0, 0, .1);\n  min-height: 100px;\n  height: auto;\n  overflow: hidden;\n  display: inline-flex;\n  cursor: pointer;\n}\n\n.index__columnItem___1j49I:nth-last-child(0) {\n  border-bottom: 0px;\n}\n\n.index__columnItem___1j49I:hover {\n  background: #FAFAFA;\n}\n\n.index__imageContainer___1EePz {\n  width: 20%;\n  position: relative;\n  text-align: center;\n  background: #446CB3;\n}\n\n.index__ProfilePicture___332oq {\n  width: 100%;\n}\n\n.index__itemPersonName___PcjTm {\n  position: absolute;\n  width: 87%;\n  bottom: 0px;\n  left: 0;\n  background: #446CB3;\n  color: #FFF;\n  padding: 3px 5px;\n  font-size: 0.8em;\n}\n\n.index__itemContainer___4wQS5 {\n  width: 75%;\n  padding: 0px 10px;\n}\n\n.index__itemTitle___2doQe {\n  color: #3498DB;\n  text-decoration: none;\n  text-align: left;\n}\n\n.index__itemBadgeList___1vDrR {\n  width: 100%;\n  margin: 10px 0;\n  text-align: left;\n}\n\n.index__itemBadgeList___1vDrR > span {\n  color: #FFF;\n  border-radius: 5px;\n  padding: 3px 10px;\n  margin-right: 5px;\n  font-size: 0.8em;\n  cursor: pointer;\n}\n\n.index__improvementBadge___3PZ5T {\n  background: #4CA1AF;\n}\n\n.index__bugBadge___87Xfa {\n  background: #D64541;\n}\n\n.index__niceToHaveBadge___2R0Mi {\n  background: #F4B350;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -13263,7 +13269,7 @@ exports = module.exports = __webpack_require__(22)();
 
 
 // module
-exports.push([module.i, ".storiesColumn__column___22VJf {\n  width: 400px;\n  padding: 0px;\n  background: #FFF;\n  border-radius: 8px;\n  border: 1px solid rgba(0, 0, 0, .1);\n  height: auto;\n  margin: 10px;\n  text-align: center;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 0.8em;\n  cursor: pointer;\n}\n\n.storiesColumn__columnIcon___-nWKO {\n  margin-top: -40px;\n  width: 15%;\n  background: rgba(255, 255, 255, .6);\n  padding: 10px;\n  border: 1px solid rgba(0, 0, 0, .15);\n  border-radius: 10%;\n}\n\n.storiesColumn__columnHead___1ARWD {\n  text-align: center;\n  font-size: 1.5em;\n  text-transform: uppercase;\n  margin-top: 10px;\n  border-bottom: 1px solid rgba(0, 0, 0, .1);\n  padding-bottom: 10px;\n}\n\n.storiesColumn__columnList___22Fhn {\n  height: 400px;\n  overflow-y: auto;\n  border-bottom: 1px solid rgba(0, 0, 0, .1);\n}\n", ""]);
+exports.push([module.i, ".storiesColumn__column___22VJf {\n  width: 400px;\n  padding: 0px;\n  background: #FFF;\n  border-radius: 8px;\n  border: 1px solid rgba(0, 0, 0, .1);\n  height: auto;\n  margin: 10px;\n  text-align: center;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 0.8em;\n}\n\n.storiesColumn__columnIcon___-nWKO {\n  margin-top: -40px;\n  width: 15%;\n  background: rgba(255, 255, 255, .6);\n  padding: 10px;\n  border: 1px solid rgba(0, 0, 0, .15);\n  border-radius: 10%;\n}\n\n.storiesColumn__columnHead___1ARWD {\n  text-align: center;\n  font-size: 1.5em;\n  text-transform: uppercase;\n  margin-top: 10px;\n  border-bottom: 1px solid rgba(0, 0, 0, .1);\n  padding-bottom: 10px;\n}\n\n.storiesColumn__columnList___22Fhn {\n  height: 400px;\n  overflow-y: auto;\n  border-bottom: 1px solid rgba(0, 0, 0, .1);\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -28027,6 +28033,135 @@ var _routes2 = _interopRequireDefault(_routes);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _reactDom2.default.render(_react2.default.createElement(_routes2.default, null), document.getElementById('root'));
+
+/***/ }),
+/* 268 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _storyItemDetails = __webpack_require__(270);
+
+var _storyItemDetails2 = _interopRequireDefault(_storyItemDetails);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var StoryItemDetails = function StoryItemDetails() {
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement('div', { className: _storyItemDetails2.default.popupOverlay }),
+    _react2.default.createElement(
+      'div',
+      { className: _storyItemDetails2.default.popupWrapper },
+      _react2.default.createElement(
+        'div',
+        { className: _storyItemDetails2.default.imageContainer },
+        _react2.default.createElement('img', {
+          className: _storyItemDetails2.default.ProfilePicture,
+          src: 'http://socialpro.miguelvasquez.net/public/avatar/large_johndoe_18gu2qv.jpg',
+          alt: 's'
+        }),
+        _react2.default.createElement(
+          'span',
+          { className: _storyItemDetails2.default.itemPersonName },
+          'Joey'
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: _storyItemDetails2.default.itemContainer },
+        _react2.default.createElement(
+          'p',
+          { className: _storyItemDetails2.default.itemTitle },
+          'Add to Cart should be available on all pages containing a product and several other functionalities'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: _storyItemDetails2.default.itemBadgeList },
+          _react2.default.createElement(
+            'span',
+            { className: _storyItemDetails2.default.improvementBadge },
+            'Improvement'
+          ),
+          _react2.default.createElement(
+            'span',
+            { className: _storyItemDetails2.default.bugBadge },
+            'Bug'
+          ),
+          _react2.default.createElement(
+            'span',
+            { className: _storyItemDetails2.default.niceToHaveBadge },
+            'Nice to Have'
+          )
+        )
+      )
+    )
+  );
+};
+
+exports.default = StoryItemDetails;
+
+/***/ }),
+/* 269 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(22)();
+// imports
+
+
+// module
+exports.push([module.i, ".storyItemDetails__popupOverlay___3nIsL {\n  position: fixed;\n  z-index: 998;\n  background: #000;\n  opacity: 0.5;\n  padding: 20px;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n}\n\n.storyItemDetails__popupWrapper___P6HUz {\n  position: fixed;\n  z-index: 999;\n  background: #fff;\n  border: 1px solid rgba(0, 0, 0, .1);\n  border-radius: 10px;\n  padding: 20px;\n  top: 20%;\n  width: 40%;\n  left: 30%;\n  display: inline-flex;\n}\n\n.storyItemDetails__imageContainer___2cglv {\n  width: 20%;\n  position: relative;\n  text-align: center;\n  background: #446CB3;\n}\n\n.storyItemDetails__ProfilePicture___3bEM0 {\n  width: 100%;\n}\n\n.storyItemDetails__itemPersonName___3Ji6o {\n  position: absolute;\n  width: 91%;\n  bottom: 0px;\n  left: 0;\n  background: #446CB3;\n  color: #FFF;\n  padding: 3px 5px;\n  font-size: 0.8em;\n}\n\n.storyItemDetails__itemContainer___1mlXS {\n  width: 75%;\n  padding: 0px 10px;\n}\n\n.storyItemDetails__itemTitle___LHSoV {\n  color: #3498DB;\n  text-decoration: none;\n  text-align: left;\n  font-size: 1.2em;\n  margin: 0;\n}\n\n.storyItemDetails__itemBadgeList___1b6LP {\n  width: 100%;\n  margin: 10px 0;\n  text-align: left;\n}\n\n.storyItemDetails__itemBadgeList___1b6LP > span {\n  color: #FFF;\n  border-radius: 5px;\n  padding: 3px 10px;\n  margin-right: 5px;\n  font-size: 0.8em;\n  cursor: pointer;\n}\n\n.storyItemDetails__improvementBadge___q9ZBK {\n  background: #4CA1AF;\n}\n\n.storyItemDetails__bugBadge___2bX16 {\n  background: #D64541;\n}\n\n.storyItemDetails__niceToHaveBadge___8jiF5 {\n  background: #F4B350;\n}\n", ""]);
+
+// exports
+exports.locals = {
+	"popupOverlay": "storyItemDetails__popupOverlay___3nIsL",
+	"popupWrapper": "storyItemDetails__popupWrapper___P6HUz",
+	"imageContainer": "storyItemDetails__imageContainer___2cglv",
+	"ProfilePicture": "storyItemDetails__ProfilePicture___3bEM0",
+	"itemPersonName": "storyItemDetails__itemPersonName___3Ji6o",
+	"itemContainer": "storyItemDetails__itemContainer___1mlXS",
+	"itemTitle": "storyItemDetails__itemTitle___LHSoV",
+	"itemBadgeList": "storyItemDetails__itemBadgeList___1b6LP",
+	"improvementBadge": "storyItemDetails__improvementBadge___q9ZBK",
+	"bugBadge": "storyItemDetails__bugBadge___2bX16",
+	"niceToHaveBadge": "storyItemDetails__niceToHaveBadge___8jiF5"
+};
+
+/***/ }),
+/* 270 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(269);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(29)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!./../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./storyItemDetails.css", function() {
+			var newContent = require("!!./../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./storyItemDetails.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);

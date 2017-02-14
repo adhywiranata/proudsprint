@@ -2,6 +2,7 @@
   background: white;
   height: auto;
   position: fixed;
+  z-index: 997;
   top: 0;
   width: 100%;
 }
