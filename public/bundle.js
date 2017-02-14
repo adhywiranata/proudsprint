@@ -12800,326 +12800,11 @@ var Page404 = function Page404() {
 exports.default = Page404;
 
 /***/ }),
-/* 123 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _react = __webpack_require__(3);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _storiesColumn = __webpack_require__(37);
-
-var _storiesColumn2 = _interopRequireDefault(_storiesColumn);
-
-var _BacklogIcon = __webpack_require__(278);
-
-var _BacklogIcon2 = _interopRequireDefault(_BacklogIcon);
-
-var _StoryItem = __webpack_require__(30);
-
-var _StoryItem2 = _interopRequireDefault(_StoryItem);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var BacklogColumn = function BacklogColumn(props) {
-  return _react2.default.createElement(
-    'div',
-    { className: _storiesColumn2.default.column },
-    _react2.default.createElement(_BacklogIcon2.default, null),
-    _react2.default.createElement(
-      'div',
-      { className: _storiesColumn2.default.columnHead },
-      'Backlog'
-    ),
-    _react2.default.createElement(
-      'div',
-      { className: _storiesColumn2.default.columnList },
-      props.backlogStories.map(function (item) {
-        return _react2.default.createElement(_StoryItem2.default, _extends({ key: item.id }, item));
-      })
-    )
-  );
-};
-
-BacklogColumn.propTypes = {
-  backlogStories: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.shape({
-    id: _react2.default.PropTypes.number.isRequired,
-    category: _react2.default.PropTypes.string.isRequired,
-    user: _react2.default.PropTypes.string,
-    story: _react2.default.PropTypes.string,
-    tags: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.string),
-    createdAt: _react2.default.PropTypes.string
-  })).isRequired
-};
-
-exports.default = BacklogColumn;
-
-/***/ }),
-/* 124 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _react = __webpack_require__(3);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _storiesColumn = __webpack_require__(37);
-
-var _storiesColumn2 = _interopRequireDefault(_storiesColumn);
-
-var _CurrentIcon = __webpack_require__(277);
-
-var _CurrentIcon2 = _interopRequireDefault(_CurrentIcon);
-
-var _StoryItem = __webpack_require__(30);
-
-var _StoryItem2 = _interopRequireDefault(_StoryItem);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var CurrentColumn = function CurrentColumn(props) {
-  return _react2.default.createElement(
-    'div',
-    { className: _storiesColumn2.default.column },
-    _react2.default.createElement(_CurrentIcon2.default, null),
-    _react2.default.createElement(
-      'div',
-      { className: _storiesColumn2.default.columnHead },
-      'On Progress'
-    ),
-    _react2.default.createElement(
-      'div',
-      { className: _storiesColumn2.default.columnList },
-      props.currentStories.map(function (item) {
-        return _react2.default.createElement(_StoryItem2.default, _extends({ key: item.id }, item));
-      })
-    )
-  );
-};
-
-CurrentColumn.propTypes = {
-  currentStories: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.shape({
-    id: _react2.default.PropTypes.number.isRequired,
-    category: _react2.default.PropTypes.string.isRequired,
-    user: _react2.default.PropTypes.string,
-    story: _react2.default.PropTypes.string,
-    tags: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.string),
-    createdAt: _react2.default.PropTypes.string
-  })).isRequired
-};
-
-exports.default = CurrentColumn;
-
-/***/ }),
-/* 125 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _react = __webpack_require__(3);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _storiesColumn = __webpack_require__(37);
-
-var _storiesColumn2 = _interopRequireDefault(_storiesColumn);
-
-var _DeliveredIcon = __webpack_require__(275);
-
-var _DeliveredIcon2 = _interopRequireDefault(_DeliveredIcon);
-
-var _StoryItem = __webpack_require__(30);
-
-var _StoryItem2 = _interopRequireDefault(_StoryItem);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var DeliveredColumn = function DeliveredColumn(props) {
-  return _react2.default.createElement(
-    'div',
-    { className: _storiesColumn2.default.column },
-    _react2.default.createElement(_DeliveredIcon2.default, null),
-    _react2.default.createElement(
-      'div',
-      { className: _storiesColumn2.default.columnHead },
-      'Delivered'
-    ),
-    _react2.default.createElement(
-      'div',
-      { className: _storiesColumn2.default.columnList },
-      props.deliveredStories.map(function (item) {
-        return _react2.default.createElement(_StoryItem2.default, _extends({ key: item.id }, item));
-      })
-    )
-  );
-};
-
-DeliveredColumn.propTypes = {
-  deliveredStories: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.shape({
-    id: _react2.default.PropTypes.number.isRequired,
-    category: _react2.default.PropTypes.string.isRequired,
-    user: _react2.default.PropTypes.string,
-    story: _react2.default.PropTypes.string,
-    tags: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.string),
-    createdAt: _react2.default.PropTypes.string
-  })).isRequired
-};
-
-exports.default = DeliveredColumn;
-
-/***/ }),
-/* 126 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _react = __webpack_require__(3);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _storiesColumn = __webpack_require__(37);
-
-var _storiesColumn2 = _interopRequireDefault(_storiesColumn);
-
-var _DoneIcon = __webpack_require__(274);
-
-var _DoneIcon2 = _interopRequireDefault(_DoneIcon);
-
-var _StoryItem = __webpack_require__(30);
-
-var _StoryItem2 = _interopRequireDefault(_StoryItem);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var DoneColumn = function DoneColumn(props) {
-  return _react2.default.createElement(
-    'div',
-    { className: _storiesColumn2.default.column },
-    _react2.default.createElement(_DoneIcon2.default, null),
-    _react2.default.createElement(
-      'div',
-      { className: _storiesColumn2.default.columnHead },
-      'Done'
-    ),
-    _react2.default.createElement(
-      'div',
-      { className: _storiesColumn2.default.columnList },
-      props.doneStories.map(function (item) {
-        return _react2.default.createElement(_StoryItem2.default, _extends({ key: item.id }, item));
-      })
-    )
-  );
-};
-
-DoneColumn.propTypes = {
-  doneStories: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.shape({
-    id: _react2.default.PropTypes.number.isRequired,
-    category: _react2.default.PropTypes.string.isRequired,
-    user: _react2.default.PropTypes.string,
-    story: _react2.default.PropTypes.string,
-    tags: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.string),
-    createdAt: _react2.default.PropTypes.string
-  })).isRequired
-};
-
-exports.default = DoneColumn;
-
-/***/ }),
-/* 127 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _react = __webpack_require__(3);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _storiesColumn = __webpack_require__(37);
-
-var _storiesColumn2 = _interopRequireDefault(_storiesColumn);
-
-var _IceboxIcon = __webpack_require__(271);
-
-var _IceboxIcon2 = _interopRequireDefault(_IceboxIcon);
-
-var _StoryItem = __webpack_require__(30);
-
-var _StoryItem2 = _interopRequireDefault(_StoryItem);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var IceboxColumn = function IceboxColumn(props) {
-  return _react2.default.createElement(
-    'div',
-    { className: _storiesColumn2.default.column },
-    _react2.default.createElement(_IceboxIcon2.default, null),
-    _react2.default.createElement(
-      'div',
-      { className: _storiesColumn2.default.columnHead },
-      'Icebox'
-    ),
-    _react2.default.createElement(
-      'div',
-      { className: _storiesColumn2.default.columnList },
-      props.iceboxStories.map(function (item) {
-        return _react2.default.createElement(_StoryItem2.default, _extends({ key: item.id }, item));
-      })
-    )
-  );
-};
-
-IceboxColumn.propTypes = {
-  iceboxStories: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.shape({
-    id: _react2.default.PropTypes.number.isRequired,
-    category: _react2.default.PropTypes.string.isRequired,
-    user: _react2.default.PropTypes.string,
-    story: _react2.default.PropTypes.string,
-    tags: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.string),
-    createdAt: _react2.default.PropTypes.string
-  })).isRequired
-};
-
-exports.default = IceboxColumn;
-
-/***/ }),
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
 /* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -13215,25 +12900,9 @@ var _index = __webpack_require__(263);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _IceboxColumn = __webpack_require__(127);
+var _StoriesColumn = __webpack_require__(280);
 
-var _IceboxColumn2 = _interopRequireDefault(_IceboxColumn);
-
-var _BacklogColumn = __webpack_require__(123);
-
-var _BacklogColumn2 = _interopRequireDefault(_BacklogColumn);
-
-var _CurrentColumn = __webpack_require__(124);
-
-var _CurrentColumn2 = _interopRequireDefault(_CurrentColumn);
-
-var _DeliveredColumn = __webpack_require__(125);
-
-var _DeliveredColumn2 = _interopRequireDefault(_DeliveredColumn);
-
-var _DoneColumn = __webpack_require__(126);
-
-var _DoneColumn2 = _interopRequireDefault(_DoneColumn);
+var _StoriesColumn2 = _interopRequireDefault(_StoriesColumn);
 
 var _StoryItemDetails = __webpack_require__(128);
 
@@ -13261,26 +12930,11 @@ var Home = function Home(props) {
   return _react2.default.createElement(
     'div',
     { className: _index2.default.wrapper },
-    _react2.default.createElement(_IceboxColumn2.default, {
-      iceboxStories: iceboxStories,
-      showStoryDetail: props.showStoryDetail
-    }),
-    _react2.default.createElement(_BacklogColumn2.default, {
-      backlogStories: backlogStories,
-      showStoryDetail: props.showStoryDetail
-    }),
-    _react2.default.createElement(_CurrentColumn2.default, {
-      currentStories: currentStories,
-      showStoryDetail: props.showStoryDetail
-    }),
-    _react2.default.createElement(_DeliveredColumn2.default, {
-      deliveredStories: deliveredStories,
-      showStoryDetail: props.showStoryDetail
-    }),
-    _react2.default.createElement(_DoneColumn2.default, {
-      doneStories: doneStories,
-      showStoryDetail: props.showStoryDetail
-    }),
+    _react2.default.createElement(_StoriesColumn2.default, { category: 'Icebox', stories: iceboxStories }),
+    _react2.default.createElement(_StoriesColumn2.default, { category: 'Backlog', stories: backlogStories }),
+    _react2.default.createElement(_StoriesColumn2.default, { category: 'Current', stories: currentStories }),
+    _react2.default.createElement(_StoriesColumn2.default, { category: 'Delivered', stories: deliveredStories }),
+    _react2.default.createElement(_StoriesColumn2.default, { category: 'Done', stories: doneStories }),
     props.isStoryDetailShow === true && _react2.default.createElement(_StoryItemDetails2.default, null)
   );
 };
@@ -28419,6 +28073,91 @@ exports.default = BacklogIcon;
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "./public/assets/images/fe6a75b97d55c56d308305687faf4466.png";
+
+/***/ }),
+/* 280 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _storiesColumn = __webpack_require__(37);
+
+var _storiesColumn2 = _interopRequireDefault(_storiesColumn);
+
+var _IceboxIcon = __webpack_require__(271);
+
+var _IceboxIcon2 = _interopRequireDefault(_IceboxIcon);
+
+var _BacklogIcon = __webpack_require__(278);
+
+var _BacklogIcon2 = _interopRequireDefault(_BacklogIcon);
+
+var _CurrentIcon = __webpack_require__(277);
+
+var _CurrentIcon2 = _interopRequireDefault(_CurrentIcon);
+
+var _DeliveredIcon = __webpack_require__(275);
+
+var _DeliveredIcon2 = _interopRequireDefault(_DeliveredIcon);
+
+var _DoneIcon = __webpack_require__(274);
+
+var _DoneIcon2 = _interopRequireDefault(_DoneIcon);
+
+var _StoryItem = __webpack_require__(30);
+
+var _StoryItem2 = _interopRequireDefault(_StoryItem);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var StoriesColumn = function StoriesColumn(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: _storiesColumn2.default.column },
+    props.category === 'Icebox' && _react2.default.createElement(_IceboxIcon2.default, null),
+    props.category === 'Backlog' && _react2.default.createElement(_BacklogIcon2.default, null),
+    props.category === 'Current' && _react2.default.createElement(_CurrentIcon2.default, null),
+    props.category === 'Delivered' && _react2.default.createElement(_DeliveredIcon2.default, null),
+    props.category === 'Done' && _react2.default.createElement(_DoneIcon2.default, null),
+    _react2.default.createElement(
+      'div',
+      { className: _storiesColumn2.default.columnHead },
+      props.category
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: _storiesColumn2.default.columnList },
+      props.stories.map(function (item) {
+        return _react2.default.createElement(_StoryItem2.default, _extends({ key: item.id }, item));
+      })
+    )
+  );
+};
+
+StoriesColumn.propTypes = {
+  category: _react2.default.PropTypes.string.isRequired,
+  stories: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.shape({
+    id: _react2.default.PropTypes.number.isRequired,
+    category: _react2.default.PropTypes.string.isRequired,
+    user: _react2.default.PropTypes.string,
+    story: _react2.default.PropTypes.string,
+    tags: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.string),
+    createdAt: _react2.default.PropTypes.string
+  })).isRequired
+};
+
+exports.default = StoriesColumn;
 
 /***/ })
 /******/ ]);

@@ -1,14 +1,22 @@
 import React from 'react';
 
 import styles from './storiesColumn.css';
+import IceboxIcon from './columnIcons/IceboxIcon';
 import BacklogIcon from './columnIcons/BacklogIcon';
+import CurrentIcon from './columnIcons/CurrentIcon';
+import DeliveredIcon from './columnIcons/DeliveredIcon';
+import DoneIcon from './columnIcons/DoneIcon';
 
 import StoryItem from './StoryItem';
 
 const StoriesColumn = props => (
   <div className={styles.column}>
-    <BacklogIcon />
-    <div className={styles.columnHead}>Backlog</div>
+    { props.category === 'Icebox' && <IceboxIcon /> }
+    { props.category === 'Backlog' && <BacklogIcon /> }
+    { props.category === 'Current' && <CurrentIcon /> }
+    { props.category === 'Delivered' && <DeliveredIcon /> }
+    { props.category === 'Done' && <DoneIcon /> }
+    <div className={styles.columnHead}>{ props.category }</div>
     <div className={styles.columnList}>
       { props.stories.map(item => <StoryItem key={item.id} {...item} />) }
     </div>
@@ -16,6 +24,7 @@ const StoriesColumn = props => (
 );
 
 StoriesColumn.propTypes = {
+  category: React.PropTypes.string.isRequired,
   stories: React.PropTypes.arrayOf(
     React.PropTypes.shape({
       id: React.PropTypes.number.isRequired,

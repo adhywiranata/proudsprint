@@ -2,11 +2,7 @@ import React from 'react';
 
 import styles from './index.css';
 
-import IceboxColumn from './StoriesColumn/IceboxColumn';
-import BacklogColumn from './StoriesColumn/BacklogColumn';
-import CurrentColumn from './StoriesColumn/CurrentColumn';
-import DeliveredColumn from './StoriesColumn/DeliveredColumn';
-import DoneColumn from './StoriesColumn/DoneColumn';
+import StoriesColumn from './StoriesColumn';
 import StoryItemDetails from './StoryItemDetails';
 
 const Home = (props) => {
@@ -18,26 +14,11 @@ const Home = (props) => {
 
   return (
     <div className={styles.wrapper}>
-      <IceboxColumn
-        iceboxStories={iceboxStories}
-        showStoryDetail={props.showStoryDetail}
-      />
-      <BacklogColumn
-        backlogStories={backlogStories}
-        showStoryDetail={props.showStoryDetail}
-      />
-      <CurrentColumn
-        currentStories={currentStories}
-        showStoryDetail={props.showStoryDetail}
-      />
-      <DeliveredColumn
-        deliveredStories={deliveredStories}
-        showStoryDetail={props.showStoryDetail}
-      />
-      <DoneColumn
-        doneStories={doneStories}
-        showStoryDetail={props.showStoryDetail}
-      />
+      <StoriesColumn category="Icebox" stories={iceboxStories} />
+      <StoriesColumn category="Backlog" stories={backlogStories} />
+      <StoriesColumn category="Current" stories={currentStories} />
+      <StoriesColumn category="Delivered" stories={deliveredStories} />
+      <StoriesColumn category="Done" stories={doneStories} />
       { props.isStoryDetailShow === true && <StoryItemDetails />}
     </div>
   );
