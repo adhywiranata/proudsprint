@@ -1,20 +1,16 @@
 import React from 'react';
 
 import styles from './storiesColumn.css';
-import doneIcon from './images/done-icon.png';
+import DoneIcon from './columnIcons/DoneIcon';
 
 import StoryItem from './StoryItem';
 
 const DoneColumn = props => (
   <div className={styles.column}>
-    <img
-      src={doneIcon}
-      className={styles.columnIcon}
-      alt="test"
-    />
+    <DoneIcon />
     <div className={styles.columnHead}>Done</div>
     <div className={styles.columnList}>
-      { props.doneStories.map(item => <StoryItem key={item} {...item} />) }
+      { props.doneStories.map(item => <StoryItem key={item.id} {...item} />) }
     </div>
   </div>
 );
@@ -22,7 +18,7 @@ const DoneColumn = props => (
 DoneColumn.propTypes = {
   doneStories: React.PropTypes.arrayOf(
     React.PropTypes.shape({
-      _id: React.PropTypes.number.isRequired,
+      id: React.PropTypes.number.isRequired,
       category: React.PropTypes.string.isRequired,
       user: React.PropTypes.string,
       story: React.PropTypes.string,

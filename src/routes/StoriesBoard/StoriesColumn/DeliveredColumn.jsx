@@ -1,20 +1,16 @@
 import React from 'react';
 
 import styles from './storiesColumn.css';
-import rocketIcon from './images/rocket-icon.png';
+import DeliveredIcon from './columnIcons/DeliveredIcon';
 
 import StoryItem from './StoryItem';
 
 const DeliveredColumn = props => (
   <div className={styles.column}>
-    <img
-      src={rocketIcon}
-      className={styles.columnIcon}
-      alt="test"
-    />
+    <DeliveredIcon />
     <div className={styles.columnHead}>Delivered</div>
     <div className={styles.columnList}>
-      { props.deliveredStories.map(item => <StoryItem key={item} {...item} />) }
+      { props.deliveredStories.map(item => <StoryItem key={item.id} {...item} />) }
     </div>
   </div>
 );
@@ -22,7 +18,7 @@ const DeliveredColumn = props => (
 DeliveredColumn.propTypes = {
   deliveredStories: React.PropTypes.arrayOf(
     React.PropTypes.shape({
-      _id: React.PropTypes.number.isRequired,
+      id: React.PropTypes.number.isRequired,
       category: React.PropTypes.string.isRequired,
       user: React.PropTypes.string,
       story: React.PropTypes.string,

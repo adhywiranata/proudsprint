@@ -18,12 +18,27 @@ const Home = (props) => {
 
   return (
     <div className={styles.wrapper}>
-      <IceboxColumn iceboxStories={iceboxStories} />
-      <BacklogColumn backlogStories={backlogStories} />
-      <CurrentColumn currentStories={currentStories} />
-      <DeliveredColumn deliveredStories={deliveredStories} />
-      <DoneColumn doneStories={doneStories} />
-      <StoryItemDetails />
+      <IceboxColumn
+        iceboxStories={iceboxStories}
+        showStoryDetail={props.showStoryDetail}
+      />
+      <BacklogColumn
+        backlogStories={backlogStories}
+        showStoryDetail={props.showStoryDetail}
+      />
+      <CurrentColumn
+        currentStories={currentStories}
+        showStoryDetail={props.showStoryDetail}
+      />
+      <DeliveredColumn
+        deliveredStories={deliveredStories}
+        showStoryDetail={props.showStoryDetail}
+      />
+      <DoneColumn
+        doneStories={doneStories}
+        showStoryDetail={props.showStoryDetail}
+      />
+      { props.isStoryDetailShow === true && <StoryItemDetails />}
     </div>
   );
 };
@@ -31,7 +46,7 @@ const Home = (props) => {
 Home.propTypes = {
   stories: React.PropTypes.arrayOf(
     React.PropTypes.shape({
-      _id: React.PropTypes.number.isRequired,
+      id: React.PropTypes.number.isRequired,
       category: React.PropTypes.string.isRequired,
       user: React.PropTypes.string,
       story: React.PropTypes.string,
@@ -39,6 +54,8 @@ Home.propTypes = {
       createdAt: React.PropTypes.string,
     }),
   ).isRequired,
+  isStoryDetailShow: React.PropTypes.bool.isRequired,
+  showStoryDetail: React.PropTypes.func.isRequired,
 };
 
 export default Home;

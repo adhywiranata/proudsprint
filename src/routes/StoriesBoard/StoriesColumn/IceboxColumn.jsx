@@ -1,20 +1,16 @@
 import React from 'react';
 
 import styles from './storiesColumn.css';
-import iceboxIcon from './images/icebox-icon.png';
+import IceboxIcon from './columnIcons/IceboxIcon';
 
 import StoryItem from './StoryItem';
 
 const IceboxColumn = props => (
   <div className={styles.column}>
-    <img
-      src={iceboxIcon}
-      className={styles.columnIcon}
-      alt="test"
-    />
+    <IceboxIcon />
     <div className={styles.columnHead}>Icebox</div>
     <div className={styles.columnList}>
-      { props.iceboxStories.map(item => <StoryItem key={item} {...item} />) }
+      { props.iceboxStories.map(item => <StoryItem key={item.id} {...item} />) }
     </div>
   </div>
 );
@@ -22,7 +18,7 @@ const IceboxColumn = props => (
 IceboxColumn.propTypes = {
   iceboxStories: React.PropTypes.arrayOf(
     React.PropTypes.shape({
-      _id: React.PropTypes.number.isRequired,
+      id: React.PropTypes.number.isRequired,
       category: React.PropTypes.string.isRequired,
       user: React.PropTypes.string,
       story: React.PropTypes.string,

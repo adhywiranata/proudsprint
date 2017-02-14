@@ -1,20 +1,16 @@
 import React from 'react';
 
 import styles from './storiesColumn.css';
-import currentIcon from './images/current-icon.png';
+import CurrentIcon from './columnIcons/CurrentIcon';
 
 import StoryItem from './StoryItem';
 
 const CurrentColumn = props => (
   <div className={styles.column}>
-    <img
-      src={currentIcon}
-      className={styles.columnIcon}
-      alt="test"
-    />
+    <CurrentIcon />
     <div className={styles.columnHead}>On Progress</div>
     <div className={styles.columnList}>
-      { props.currentStories.map(item => <StoryItem key={item} {...item} />) }
+      { props.currentStories.map(item => <StoryItem key={item.id} {...item} />) }
     </div>
   </div>
 );
@@ -22,7 +18,7 @@ const CurrentColumn = props => (
 CurrentColumn.propTypes = {
   currentStories: React.PropTypes.arrayOf(
     React.PropTypes.shape({
-      _id: React.PropTypes.number.isRequired,
+      id: React.PropTypes.number.isRequired,
       category: React.PropTypes.string.isRequired,
       user: React.PropTypes.string,
       story: React.PropTypes.string,

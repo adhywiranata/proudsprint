@@ -12,11 +12,12 @@ const StoryItemDetails = () => (
           src="http://socialpro.miguelvasquez.net/public/avatar/large_johndoe_18gu2qv.jpg"
           alt="s"
         />
-      <span className={styles.itemPersonName}>Joey</span>
+        <span className={styles.itemPersonName}>Joey</span>
       </div>
       <div className={styles.itemContainer}>
         <p className={styles.itemTitle}>
-          Add to Cart should be available on all pages containing a product and several other functionalities
+          Add to Cart should be available on all pages containing a product
+          and several other functionalities.
         </p>
         <div className={styles.itemBadgeList}>
           <span className={styles.improvementBadge}>Improvement</span>

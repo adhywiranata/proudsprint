@@ -5,18 +5,18 @@ import BacklogIcon from './columnIcons/BacklogIcon';
 
 import StoryItem from './StoryItem';
 
-const BacklogColumn = props => (
+const StoriesColumn = props => (
   <div className={styles.column}>
     <BacklogIcon />
     <div className={styles.columnHead}>Backlog</div>
     <div className={styles.columnList}>
-      { props.backlogStories.map(item => <StoryItem key={item.id} {...item} />) }
+      { props.stories.map(item => <StoryItem key={item.id} {...item} />) }
     </div>
   </div>
 );
 
-BacklogColumn.propTypes = {
-  backlogStories: React.PropTypes.arrayOf(
+StoriesColumn.propTypes = {
+  stories: React.PropTypes.arrayOf(
     React.PropTypes.shape({
       id: React.PropTypes.number.isRequired,
       category: React.PropTypes.string.isRequired,
@@ -28,4 +28,4 @@ BacklogColumn.propTypes = {
   ).isRequired,
 };
 
-export default BacklogColumn;
+export default StoriesColumn;
