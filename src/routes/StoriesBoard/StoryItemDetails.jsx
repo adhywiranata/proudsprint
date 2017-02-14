@@ -2,9 +2,9 @@ import React from 'react';
 
 import styles from './storyItemDetails.css';
 
-const StoryItemDetails = () => (
+const StoryItemDetails = props => (
   <div>
-    <div className={styles.popupOverlay} />
+    <button className={styles.popupOverlay} onClick={props.hideStoryDetail} />
     <div className={styles.popupWrapper}>
       <div className={styles.imageContainer}>
         <img
@@ -28,5 +28,9 @@ const StoryItemDetails = () => (
     </div>
   </div>
 );
+
+StoryItemDetails.propTypes = {
+  hideStoryDetail: React.PropTypes.func.isRequired,
+};
 
 export default StoryItemDetails;

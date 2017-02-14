@@ -18,7 +18,14 @@ const StoriesColumn = props => (
     { props.category === 'Done' && <DoneIcon /> }
     <div className={styles.columnHead}>{ props.category }</div>
     <div className={styles.columnList}>
-      { props.stories.map(item => <StoryItem key={item.id} {...item} />) }
+      {
+        props.stories.map(item =>
+          <StoryItem
+            key={item.id}
+            showStoryDetail={props.showStoryDetail}
+            {...item}
+          />)
+      }
     </div>
   </div>
 );
@@ -35,6 +42,7 @@ StoriesColumn.propTypes = {
       createdAt: React.PropTypes.string,
     }),
   ).isRequired,
+  showStoryDetail: React.PropTypes.func.isRequired,
 };
 
 export default StoriesColumn;

@@ -12,14 +12,29 @@ const Home = (props) => {
   const deliveredStories = props.stories.filter(story => story.category === 'delivered');
   const doneStories = props.stories.filter(story => story.category === 'done');
 
+  const columns = [
+    { colId: 1, category: 'Icebox', data: iceboxStories },
+    { colId: 2, category: 'Backlog', data: backlogStories },
+    { colId: 3, category: 'Current', data: currentStories },
+    { colId: 4, category: 'Delivered', data: deliveredStories },
+    { colId: 5, category: 'Done', data: doneStories },
+  ];
+
   return (
     <div className={styles.wrapper}>
-      <StoriesColumn category="Icebox" stories={iceboxStories} />
-      <StoriesColumn category="Backlog" stories={backlogStories} />
-      <StoriesColumn category="Current" stories={currentStories} />
-      <StoriesColumn category="Delivered" stories={deliveredStories} />
-      <StoriesColumn category="Done" stories={doneStories} />
-      { props.isStoryDetailShow === true && <StoryItemDetails />}
+      {
+        columns.map(storyColumn =>
+          <StoriesColumn
+            key={storyColumn.colId}
+            category={storyColumn.category}
+            stories={storyColumn.data}
+            showStoryDetail={props.showStoryDetail}
+          />)
+      }
+      {
+        props.isStoryDetailShow === true &&
+        <StoryItemDetails hideStoryDetail={props.hideStoryDetail} />
+      }
     </div>
   );
 };
@@ -37,6 +52,7 @@ Home.propTypes = {
   ).isRequired,
   isStoryDetailShow: React.PropTypes.bool.isRequired,
   showStoryDetail: React.PropTypes.func.isRequired,
+  hideStoryDetail: React.PropTypes.func.isRequired,
 };
 
 export default Home;

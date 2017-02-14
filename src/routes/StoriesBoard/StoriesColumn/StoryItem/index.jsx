@@ -3,11 +3,11 @@ import React from 'react';
 import styles from './index.css';
 
 const StoryItem = props => (
-  <div className={styles.columnItem}>
+  <div className={styles.columnItem} onClick={props.showStoryDetail}>
     <div className={styles.imageContainer}>
       <img
         className={styles.ProfilePicture}
-        src="http://socialpro.miguelvasquez.net/public/avatar/large_johndoe_18gu2qv.jpg"
+        src={props.profilePictureUrl}
         alt="s"
       />
       <span className={styles.itemPersonName}>{ props.user }</span>
@@ -28,6 +28,8 @@ const StoryItem = props => (
 StoryItem.propTypes = {
   story: React.PropTypes.string.isRequired,
   user: React.PropTypes.string.isRequired,
+  profilePictureUrl: React.PropTypes.string.isRequired,
+  showStoryDetail: React.PropTypes.func.isRequired,
 };
 
 export default StoryItem;
