@@ -12700,7 +12700,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var StoryItem = function StoryItem(props) {
   return _react2.default.createElement(
-    'div',
+    'button',
     { className: _index2.default.columnItem, onClick: props.showStoryDetail },
     _react2.default.createElement(
       'div',
@@ -13239,7 +13239,7 @@ exports = module.exports = __webpack_require__(15)();
 
 
 // module
-exports.push([module.i, ".index__columnItem___1j49I {\n  width: 100%;\n  padding: 0px;\n  border-bottom: 1px solid rgba(0, 0, 0, .1);\n  min-height: 100px;\n  height: auto;\n  overflow: hidden;\n  display: inline-flex;\n  cursor: pointer;\n}\n\n.index__columnItem___1j49I:nth-last-child(0) {\n  border-bottom: 0px;\n}\n\n.index__columnItem___1j49I:hover {\n  background: #FAFAFA;\n}\n\n.index__imageContainer___1EePz {\n  width: 20%;\n  position: relative;\n  text-align: center;\n  background: #446CB3;\n}\n\n.index__ProfilePicture___332oq {\n  width: 100%;\n}\n\n.index__itemPersonName___PcjTm {\n  position: absolute;\n  width: 87%;\n  bottom: 0px;\n  left: 0;\n  background: #446CB3;\n  color: #FFF;\n  padding: 3px 5px;\n  font-size: 0.8em;\n}\n\n.index__itemContainer___4wQS5 {\n  width: 75%;\n  padding: 0px 10px;\n}\n\n.index__itemTitle___2doQe {\n  color: #3498DB;\n  text-decoration: none;\n  text-align: left;\n}\n\n.index__itemBadgeList___1vDrR {\n  width: 100%;\n  margin: 10px 0;\n  text-align: left;\n}\n\n.index__itemBadgeList___1vDrR > span {\n  color: #FFF;\n  border-radius: 5px;\n  padding: 3px 10px;\n  margin-right: 5px;\n  font-size: 0.8em;\n  cursor: pointer;\n}\n\n.index__improvementBadge___3PZ5T {\n  background: #4CA1AF;\n}\n\n.index__bugBadge___87Xfa {\n  background: #D64541;\n}\n\n.index__niceToHaveBadge___2R0Mi {\n  background: #F4B350;\n}\n", ""]);
+exports.push([module.i, ".index__columnItem___1j49I {\n  background: transparent;\n  border: 0;\n  padding: 0;\n  outline: none;\n  width: 100%;\n  padding: 0px;\n  border-bottom: 1px solid rgba(0, 0, 0, .1);\n  min-height: 70px;\n  font-size: 1em;\n  height: auto;\n  overflow: hidden;\n  display: inline-flex;\n  cursor: pointer;\n}\n\n.index__columnItem___1j49I:nth-last-child(0) {\n  border-bottom: 0px;\n}\n\n.index__columnItem___1j49I:hover {\n  background: #FAFAFA;\n}\n\n.index__imageContainer___1EePz {\n  width: 20%;\n  position: relative;\n  text-align: center;\n  background: #446CB3;\n}\n\n.index__ProfilePicture___332oq {\n  width: 100%;\n}\n\n.index__itemPersonName___PcjTm {\n  position: absolute;\n  width: 87%;\n  bottom: 0px;\n  left: 0;\n  background: #446CB3;\n  color: #FFF;\n  padding: 3px 5px;\n  font-size: 0.8em;\n}\n\n.index__itemContainer___4wQS5 {\n  width: 75%;\n  padding: 0px 10px;\n}\n\n.index__itemTitle___2doQe {\n  color: #3498DB;\n  text-decoration: none;\n  text-align: left;\n}\n\n.index__itemBadgeList___1vDrR {\n  width: 100%;\n  margin: 10px 0;\n  text-align: left;\n}\n\n.index__itemBadgeList___1vDrR > span {\n  color: #FFF;\n  border-radius: 5px;\n  padding: 3px 10px;\n  margin-right: 5px;\n  font-size: 0.8em;\n  cursor: pointer;\n}\n\n.index__improvementBadge___3PZ5T {\n  background: #4CA1AF;\n}\n\n.index__bugBadge___87Xfa {\n  background: #D64541;\n}\n\n.index__niceToHaveBadge___2R0Mi {\n  background: #F4B350;\n}\n", ""]);
 
 // exports
 exports.locals = {

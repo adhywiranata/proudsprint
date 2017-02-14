@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './index.css';
 
 const StoryItem = props => (
-  <div className={styles.columnItem} onClick={props.showStoryDetail}>
+  <button className={styles.columnItem} onClick={props.showStoryDetail}>
     <div className={styles.imageContainer}>
       <img
         className={styles.ProfilePicture}
@@ -22,7 +22,7 @@ const StoryItem = props => (
         <span className={styles.niceToHaveBadge}>Nice to Have</span>
       </div>
     </div>
-  </div>
+  </button>
 );
 
 StoryItem.propTypes = {
