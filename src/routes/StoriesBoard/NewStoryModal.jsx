@@ -6,7 +6,7 @@ const NewStoryModal = props => (
   <div>
     <button className={styles.popupOverlay} onClick={() => props.toggleNewStoryModal(false)} />
     <div className={styles.popupWrapper}>
-      <form onSubmit={() => { console.log('test'); }}>
+      <form onSubmit={(e) => { e.preventDefault(); console.log(props.storyModalData.newStoryForm); }}>
         <label htmlFor="storyForm">Story</label>
         <input
           id="storyForm"

@@ -30677,8 +30677,8 @@ var NewStoryModal = function NewStoryModal(props) {
       { className: _newStoryModal2.default.popupWrapper },
       _react2.default.createElement(
         'form',
-        { onSubmit: function onSubmit() {
-            console.log('test');
+        { onSubmit: function onSubmit(e) {
+            e.preventDefault();console.log(props.storyModalData.newStoryForm);
           } },
         _react2.default.createElement(
           'label',
@@ -30794,7 +30794,7 @@ exports = module.exports = __webpack_require__(15)();
 
 
 // module
-exports.push([module.i, ".newStoryModal__popupOverlay___2NCZA {\n  position: fixed;\n  z-index: 998;\n  background: #000;\n  opacity: 0.5;\n  padding: 20px;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  border: 0;\n}\n\n.newStoryModal__popupWrapper___3-d9F {\n  position: fixed;\n  z-index: 999;\n  background: #fff;\n  border: 1px solid rgba(0, 0, 0, .1);\n  border-radius: 10px;\n  padding: 20px;\n  top: 20%;\n  width: 40%;\n  left: 30%;\n  display: inline-flex;\n}\n\nform {\n  width: 100%;\n  padding: 30px;\n}\n\ninput, select {\n  margin: 10px 0;\n  width: 100%;\n  font-size: 1em;\n  border: 1px solid rbga(0, 0, 0, .1);\n  padding: 5px 10px;\n  outline: none;\n}\n\n.newStoryModal__submitBtn___1hyia {\n  border: 0;\n  outline: none;\n  background: #26A65B;\n  color: #FFF;\n  padding: 10px 20px;\n  font-size: 1em;\n  border-radius: 8px;\n}\n", ""]);
+exports.push([module.i, ".newStoryModal__popupOverlay___2NCZA {\n  position: fixed;\n  z-index: 998;\n  background: #000;\n  opacity: 0.5;\n  padding: 20px;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  border: 0;\n}\n\n.newStoryModal__popupWrapper___3-d9F {\n  position: fixed;\n  z-index: 999;\n  background: #fff;\n  border: 1px solid rgba(0, 0, 0, .1);\n  border-radius: 10px;\n  padding: 20px;\n  top: 20%;\n  width: 40%;\n  left: 30%;\n  display: inline-flex;\n}\n\nform {\n  width: 100%;\n  padding: 30px;\n}\n\ninput, select {\n  margin: 10px 0;\n  width: 100%;\n  font-size: 1em;\n  border: 1px solid rbga(0, 0, 0, .1);\n  padding: 5px 10px;\n  outline: none;\n}\n\n.newStoryModal__submitBtn___1hyia {\n  cursor: pointer;\n  border: 0;\n  outline: none;\n  background: #26A65B;\n  color: #FFF;\n  padding: 10px 20px;\n  font-size: 1em;\n  border-radius: 8px;\n}\n", ""]);
 
 // exports
 exports.locals = {

@@ -39,6 +39,7 @@ input, select {
 }
 
 .submitBtn {
+  cursor: pointer;
   border: 0;
   outline: none;
   background: #26A65B;
