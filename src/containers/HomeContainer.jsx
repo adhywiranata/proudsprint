@@ -44,6 +44,7 @@ class HomeContainer extends Component {
           isStoryDetailShow={this.state.isStoryDetailShow}
           showStoryDetail={this.showStoryDetail}
           hideStoryDetail={this.hideStoryDetail}
+          storyModalData={this.props.storyModalData}
         />
       </div>
     );
@@ -52,6 +53,7 @@ class HomeContainer extends Component {
 
 const mapStateToProps = state => ({
   storiesData: state.storiesData,
+  storyModalData: state.storyModalData,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -71,6 +73,18 @@ HomeContainer.propTypes = {
     }),
   ).isRequired,
   fetchStories: React.PropTypes.func.isRequired,
+  storyModalData: React.PropTypes.shape({
+    isModalVisible: React.PropTypes.bool.isRequired,
+    newStoryForm: React.PropTypes.shape({
+      id: React.PropTypes.number.isRequired,
+      category: React.PropTypes.string.isRequired,
+      user: React.PropTypes.string,
+      profilePictureUrl: React.PropTypes.image,
+      story: React.PropTypes.string,
+      tags: React.PropTypes.arrayOf(React.PropTypes.string),
+      createdAt: React.PropTypes.string,
+    }).isRequired,
+  }).isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);

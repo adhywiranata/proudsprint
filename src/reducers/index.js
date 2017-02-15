@@ -5,7 +5,7 @@ import storyModalReducer from './storyModalReducer';
 
 const rootReducer = combineReducers({
   storiesData: storiesReducer,
-  storiesModalData: storyModalReducer,
+  storyModalData: storyModalReducer,
 });
 
 export default rootReducer;

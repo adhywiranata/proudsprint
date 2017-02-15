@@ -4,6 +4,7 @@ import styles from './index.css';
 
 import StoriesColumn from './StoriesColumn';
 import StoryItemDetails from './StoryItemDetails';
+import NewStoryModal from './NewStoryModal';
 
 const Home = (props) => {
   const iceboxStories = props.stories.filter(story => story.category === 'icebox');
@@ -35,6 +36,10 @@ const Home = (props) => {
         props.isStoryDetailShow === true &&
         <StoryItemDetails hideStoryDetail={props.hideStoryDetail} />
       }
+      {
+        props.storyModalData.isModalVisible === true &&
+        <NewStoryModal />
+      }
     </div>
   );
 };
@@ -50,9 +55,25 @@ Home.propTypes = {
       createdAt: React.PropTypes.string,
     }),
   ).isRequired,
+
   isStoryDetailShow: React.PropTypes.bool.isRequired,
+
   showStoryDetail: React.PropTypes.func.isRequired,
+
   hideStoryDetail: React.PropTypes.func.isRequired,
+
+  storyModalData: React.PropTypes.shape({
+    isModalVisible: React.PropTypes.bool.isRequired,
+    newStoryForm: React.PropTypes.shape({
+      id: React.PropTypes.number.isRequired,
+      category: React.PropTypes.string.isRequired,
+      user: React.PropTypes.string,
+      profilePictureUrl: React.PropTypes.image,
+      story: React.PropTypes.string,
+      tags: React.PropTypes.arrayOf(React.PropTypes.string),
+      createdAt: React.PropTypes.string,
+    }).isRequired,
+  }).isRequired,
 };
 
 export default Home;

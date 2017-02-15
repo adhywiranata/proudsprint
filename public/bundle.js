@@ -13830,7 +13830,8 @@ var HomeContainer = function (_Component) {
           stories: this.props.storiesData,
           isStoryDetailShow: this.state.isStoryDetailShow,
           showStoryDetail: this.showStoryDetail,
-          hideStoryDetail: this.hideStoryDetail
+          hideStoryDetail: this.hideStoryDetail,
+          storyModalData: this.props.storyModalData
         })
       );
     }
@@ -13841,7 +13842,8 @@ var HomeContainer = function (_Component) {
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    storiesData: state.storiesData
+    storiesData: state.storiesData,
+    storyModalData: state.storyModalData
   };
 };
 
@@ -13863,7 +13865,19 @@ HomeContainer.propTypes = {
     tags: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.string),
     createdAt: _react2.default.PropTypes.string
   })).isRequired,
-  fetchStories: _react2.default.PropTypes.func.isRequired
+  fetchStories: _react2.default.PropTypes.func.isRequired,
+  storyModalData: _react2.default.PropTypes.shape({
+    isModalVisible: _react2.default.PropTypes.bool.isRequired,
+    newStoryForm: _react2.default.PropTypes.shape({
+      id: _react2.default.PropTypes.number.isRequired,
+      category: _react2.default.PropTypes.string.isRequired,
+      user: _react2.default.PropTypes.string,
+      profilePictureUrl: _react2.default.PropTypes.image,
+      story: _react2.default.PropTypes.string,
+      tags: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.string),
+      createdAt: _react2.default.PropTypes.string
+    }).isRequired
+  }).isRequired
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomeContainer);
@@ -13883,6 +13897,10 @@ var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRedux = __webpack_require__(77);
+
+var _actions = __webpack_require__(132);
+
 var _Header = __webpack_require__(133);
 
 var _Header2 = _interopRequireDefault(_Header);
@@ -13893,16 +13911,29 @@ var MainContainer = function MainContainer(props) {
   return _react2.default.createElement(
     'div',
     null,
-    _react2.default.createElement(_Header2.default, null),
+    _react2.default.createElement(_Header2.default, { toggleNewStoryModal: props.toggleNewStoryModal }),
     props.children
   );
 };
 
-MainContainer.propTypes = {
-  children: _react2.default.PropTypes.element.isRequired
+var mapStateToProps = function mapStateToProps() {
+  return {};
 };
 
-exports.default = MainContainer;
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    toggleNewStoryModal: function toggleNewStoryModal(isModalVisible) {
+      return dispatch((0, _actions.toggleNewStoryModal)(isModalVisible));
+    }
+  };
+};
+
+MainContainer.propTypes = {
+  children: _react2.default.PropTypes.element.isRequired,
+  toggleNewStoryModal: _react2.default.PropTypes.func.isRequired
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(MainContainer);
 
 /***/ }),
 /* 139 */
@@ -13929,7 +13960,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var rootReducer = (0, _redux.combineReducers)({
   storiesData: _storiesReducer2.default,
-  storiesModalData: _storyModalReducer2.default
+  storyModalData: _storyModalReducer2.default
 });
 
 exports.default = rootReducer;
@@ -14493,6 +14524,10 @@ var _StoryItemDetails = __webpack_require__(150);
 
 var _StoryItemDetails2 = _interopRequireDefault(_StoryItemDetails);
 
+var _NewStoryModal = __webpack_require__(318);
+
+var _NewStoryModal2 = _interopRequireDefault(_NewStoryModal);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Home = function Home(props) {
@@ -14525,7 +14560,8 @@ var Home = function Home(props) {
         showStoryDetail: props.showStoryDetail
       });
     }),
-    props.isStoryDetailShow === true && _react2.default.createElement(_StoryItemDetails2.default, { hideStoryDetail: props.hideStoryDetail })
+    props.isStoryDetailShow === true && _react2.default.createElement(_StoryItemDetails2.default, { hideStoryDetail: props.hideStoryDetail }),
+    props.storyModalData.isModalVisible === true && _react2.default.createElement(_NewStoryModal2.default, null)
   );
 };
 
@@ -14538,9 +14574,25 @@ Home.propTypes = {
     tags: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.string),
     createdAt: _react2.default.PropTypes.string
   })).isRequired,
+
   isStoryDetailShow: _react2.default.PropTypes.bool.isRequired,
+
   showStoryDetail: _react2.default.PropTypes.func.isRequired,
-  hideStoryDetail: _react2.default.PropTypes.func.isRequired
+
+  hideStoryDetail: _react2.default.PropTypes.func.isRequired,
+
+  storyModalData: _react2.default.PropTypes.shape({
+    isModalVisible: _react2.default.PropTypes.bool.isRequired,
+    newStoryForm: _react2.default.PropTypes.shape({
+      id: _react2.default.PropTypes.number.isRequired,
+      category: _react2.default.PropTypes.string.isRequired,
+      user: _react2.default.PropTypes.string,
+      profilePictureUrl: _react2.default.PropTypes.image,
+      story: _react2.default.PropTypes.string,
+      tags: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.string),
+      createdAt: _react2.default.PropTypes.string
+    }).isRequired
+  }).isRequired
 };
 
 exports.default = Home;
@@ -30542,6 +30594,96 @@ var storyModalReducer = function storyModalReducer() {
 };
 
 exports.default = storyModalReducer;
+
+/***/ }),
+/* 318 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _newStoryModal = __webpack_require__(320);
+
+var _newStoryModal2 = _interopRequireDefault(_newStoryModal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var NewStoryModal = function NewStoryModal() {
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement('button', { className: _newStoryModal2.default.popupOverlay }),
+    _react2.default.createElement(
+      'div',
+      { className: _newStoryModal2.default.popupWrapper },
+      'wawa'
+    )
+  );
+};
+
+NewStoryModal.propTypes = {};
+
+exports.default = NewStoryModal;
+
+/***/ }),
+/* 319 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(15)();
+// imports
+
+
+// module
+exports.push([module.i, ".newStoryModal__popupOverlay___2NCZA {\n  position: fixed;\n  z-index: 998;\n  background: #000;\n  opacity: 0.5;\n  padding: 20px;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  border: 0;\n}\n\n.newStoryModal__popupWrapper___3-d9F {\n  position: fixed;\n  z-index: 999;\n  background: #fff;\n  border: 1px solid rgba(0, 0, 0, .1);\n  border-radius: 10px;\n  padding: 20px;\n  top: 20%;\n  width: 40%;\n  left: 30%;\n  display: inline-flex;\n}\n\n.newStoryModal__imageContainer___1evsD {\n  width: 20%;\n  position: relative;\n  text-align: center;\n  background: #446CB3;\n}\n\n.newStoryModal__ProfilePicture___3fFJ6 {\n  width: 100%;\n}\n\n.newStoryModal__itemPersonName___rzECP {\n  position: absolute;\n  width: 91%;\n  bottom: 0px;\n  left: 0;\n  background: #446CB3;\n  color: #FFF;\n  padding: 3px 5px;\n  font-size: 0.8em;\n}\n\n.newStoryModal__itemContainer___Nqhr- {\n  width: 75%;\n  padding: 0px 10px;\n}\n\n.newStoryModal__itemTitle___2Az4E {\n  color: #3498DB;\n  text-decoration: none;\n  text-align: left;\n  font-size: 1.2em;\n  margin: 0;\n}\n\n.newStoryModal__itemBadgeList___3lwmT {\n  width: 100%;\n  margin: 10px 0;\n  text-align: left;\n}\n\n.newStoryModal__itemBadgeList___3lwmT > span {\n  color: #FFF;\n  border-radius: 5px;\n  padding: 3px 10px;\n  margin-right: 5px;\n  font-size: 0.8em;\n  cursor: pointer;\n}\n\n.newStoryModal__improvementBadge___yKlP0 {\n  background: #4CA1AF;\n}\n\n.newStoryModal__bugBadge___3zjPV {\n  background: #D64541;\n}\n\n.newStoryModal__niceToHaveBadge___1dmy0 {\n  background: #F4B350;\n}\n", ""]);
+
+// exports
+exports.locals = {
+	"popupOverlay": "newStoryModal__popupOverlay___2NCZA",
+	"popupWrapper": "newStoryModal__popupWrapper___3-d9F",
+	"imageContainer": "newStoryModal__imageContainer___1evsD",
+	"ProfilePicture": "newStoryModal__ProfilePicture___3fFJ6",
+	"itemPersonName": "newStoryModal__itemPersonName___rzECP",
+	"itemContainer": "newStoryModal__itemContainer___Nqhr-",
+	"itemTitle": "newStoryModal__itemTitle___2Az4E",
+	"itemBadgeList": "newStoryModal__itemBadgeList___3lwmT",
+	"improvementBadge": "newStoryModal__improvementBadge___yKlP0",
+	"bugBadge": "newStoryModal__bugBadge___3zjPV",
+	"niceToHaveBadge": "newStoryModal__niceToHaveBadge___1dmy0"
+};
+
+/***/ }),
+/* 320 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(319);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(19)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!./../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./newStoryModal.css", function() {
+			var newContent = require("!!./../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./newStoryModal.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);

@@ -1,0 +1,87 @@
+.popupOverlay {
+  position: fixed;
+  z-index: 998;
+  background: #000;
+  opacity: 0.5;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: 0;
+}
+
+.popupWrapper {
+  position: fixed;
+  z-index: 999;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 10px;
+  padding: 20px;
+  top: 20%;
+  width: 40%;
+  left: 30%;
+  display: inline-flex;
+}
+
+.imageContainer {
+  width: 20%;
+  position: relative;
+  text-align: center;
+  background: #446CB3;
+}
+
+.ProfilePicture {
+  width: 100%;
+}
+
+.itemPersonName {
+  position: absolute;
+  width: 91%;
+  bottom: 0px;
+  left: 0;
+  background: #446CB3;
+  color: #FFF;
+  padding: 3px 5px;
+  font-size: 0.8em;
+}
+
+.itemContainer {
+  width: 75%;
+  padding: 0px 10px;
+}
+
+.itemTitle {
+  color: #3498DB;
+  text-decoration: none;
+  text-align: left;
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.itemBadgeList {
+  width: 100%;
+  margin: 10px 0;
+  text-align: left;
+}
+
+.itemBadgeList > span {
+  color: #FFF;
+  border-radius: 5px;
+  padding: 3px 10px;
+  margin-right: 5px;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+.improvementBadge {
+  background: #4CA1AF;
+}
+
+.bugBadge {
+  background: #D64541;
+}
+
+.niceToHaveBadge {
+  background: #F4B350;
+}
