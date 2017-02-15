@@ -13875,7 +13875,8 @@ var HomeContainer = function (_Component) {
           storyModalData: this.props.storyModalData,
           toggleNewStoryModal: this.props.toggleNewStoryModal,
           handleChangeNewStoryForm: this.props.handleChangeNewStoryForm,
-          addStory: this.props.addStory
+          addStory: this.props.addStory,
+          incrementNewStoryFormId: this.props.incrementNewStoryFormId
         })
       );
     }
@@ -13904,6 +13905,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     addStory: function addStory(newStory) {
       return dispatch((0, _actions.addStory)(newStory));
+    },
+    incrementNewStoryFormId: function incrementNewStoryFormId() {
+      return dispatch((0, _actions.incrementNewStoryFormId)());
     }
   };
 };
@@ -13933,7 +13937,8 @@ HomeContainer.propTypes = {
   }).isRequired,
   toggleNewStoryModal: _react2.default.PropTypes.func.isRequired,
   handleChangeNewStoryForm: _react2.default.PropTypes.func.isRequired,
-  addStory: _react2.default.PropTypes.func.isRequired
+  addStory: _react2.default.PropTypes.func.isRequired,
+  incrementNewStoryFormId: _react2.default.PropTypes.func.isRequired
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomeContainer);
@@ -14628,7 +14633,8 @@ var Home = function Home(props) {
       storyModalData: props.storyModalData,
       toggleNewStoryModal: props.toggleNewStoryModal,
       handleChangeNewStoryForm: props.handleChangeNewStoryForm,
-      addStory: props.addStory
+      addStory: props.addStory,
+      incrementNewStoryFormId: props.incrementNewStoryFormId
     })
   );
 };
@@ -14664,7 +14670,8 @@ Home.propTypes = {
 
   toggleNewStoryModal: _react2.default.PropTypes.func.isRequired,
   handleChangeNewStoryForm: _react2.default.PropTypes.func.isRequired,
-  addStory: _react2.default.PropTypes.func.isRequired
+  addStory: _react2.default.PropTypes.func.isRequired,
+  incrementNewStoryFormId: _react2.default.PropTypes.func.isRequired
 };
 
 exports.default = Home;
@@ -30721,6 +30728,7 @@ var NewStoryModal = function NewStoryModal(props) {
             e.preventDefault();
             props.addStory(props.storyModalData.newStoryForm);
             props.toggleNewStoryModal(false);
+            props.incrementNewStoryFormId();
           }
         },
         _react2.default.createElement(
@@ -30828,7 +30836,8 @@ NewStoryModal.propTypes = {
 
   toggleNewStoryModal: _react2.default.PropTypes.func.isRequired,
   handleChangeNewStoryForm: _react2.default.PropTypes.func.isRequired,
-  addStory: _react2.default.PropTypes.func.isRequired
+  addStory: _react2.default.PropTypes.func.isRequired,
+  incrementNewStoryFormId: _react2.default.PropTypes.func.isRequired
 };
 
 exports.default = NewStoryModal;

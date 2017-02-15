@@ -43,6 +43,7 @@ const Home = (props) => {
           toggleNewStoryModal={props.toggleNewStoryModal}
           handleChangeNewStoryForm={props.handleChangeNewStoryForm}
           addStory={props.addStory}
+          incrementNewStoryFormId={props.incrementNewStoryFormId}
         />
       }
     </div>
@@ -83,6 +84,7 @@ Home.propTypes = {
   toggleNewStoryModal: React.PropTypes.func.isRequired,
   handleChangeNewStoryForm: React.PropTypes.func.isRequired,
   addStory: React.PropTypes.func.isRequired,
+  incrementNewStoryFormId: React.PropTypes.func.isRequired,
 };
 
 export default Home;

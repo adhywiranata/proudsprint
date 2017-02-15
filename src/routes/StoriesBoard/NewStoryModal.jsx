@@ -11,6 +11,7 @@ const NewStoryModal = props => (
           e.preventDefault();
           props.addStory(props.storyModalData.newStoryForm);
           props.toggleNewStoryModal(false);
+          props.incrementNewStoryFormId();
         }
       }
       >
@@ -73,6 +74,7 @@ NewStoryModal.propTypes = {
   toggleNewStoryModal: React.PropTypes.func.isRequired,
   handleChangeNewStoryForm: React.PropTypes.func.isRequired,
   addStory: React.PropTypes.func.isRequired,
+  incrementNewStoryFormId: React.PropTypes.func.isRequired,
 };
 
 export default NewStoryModal;
