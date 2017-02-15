@@ -8758,6 +8758,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var FETCH_STORIES = exports.FETCH_STORIES = 'FETCH_STORIES';
 var FETCH_STORY_DETAILS = exports.FETCH_STORY_DETAILS = 'FETCH_STORY_DETAILS';
+var ADD_STORY = exports.ADD_STORY = 'ADD_STORY';
 
 var TOGGLE_NEW_STORY_MODAL = exports.TOGGLE_NEW_STORY_MODAL = 'TOGGLE_NEW_STORY_MODAL';
 var HANDLE_CHANGE_NEW_STORY_FORM = exports.HANDLE_CHANGE_NEW_STORY_FORM = 'HANDLE_CHANGE_NEW_STORY_FORM';
@@ -14031,6 +14032,11 @@ var fetchStories = function fetchStories(state) {
   return newState;
 };
 
+var addStory = function addStory(state, newStory) {
+  var newState = [].concat(_toConsumableArray(state), [newStory]);
+  return newState;
+};
+
 var storiesReducer = function storiesReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
   var action = arguments[1];
@@ -14038,6 +14044,8 @@ var storiesReducer = function storiesReducer() {
   switch (action.type) {
     case ActionTypes.FETCH_STORIES:
       return fetchStories(state);
+    case ActionTypes.ADD_STORY:
+      return addStory(state, action.payload);
     default:
       return state;
   }

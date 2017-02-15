@@ -9,10 +9,17 @@ const fetchStories = (state) => {
   return newState;
 };
 
+const addStory = (state, newStory) => {
+  const newState = [...state, newStory];
+  return newState;
+};
+
 const storiesReducer = (state = initialState, action) => {
   switch (action.type) {
     case ActionTypes.FETCH_STORIES:
       return fetchStories(state);
+    case ActionTypes.ADD_STORY:
+      return addStory(state, action.payload);
     default:
       return state;
   }
