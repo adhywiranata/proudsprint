@@ -13559,7 +13559,7 @@ module.exports = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.handleChangeNewStoryForm = exports.toggleNewStoryModal = exports.fetchStoryDetails = exports.fetchStories = undefined;
+exports.handleChangeNewStoryForm = exports.toggleNewStoryModal = exports.addStory = exports.fetchStoryDetails = exports.fetchStories = undefined;
 
 var _constants = __webpack_require__(78);
 
@@ -13579,6 +13579,14 @@ var fetchStoryDetails = exports.fetchStoryDetails = function fetchStoryDetails(s
     type: ActionTypes.FETCH_STORY_DETAILS,
     payload: storyId,
     text: 'display story details'
+  };
+};
+
+var addStory = exports.addStory = function addStory(newStory) {
+  return {
+    type: ActionTypes.ADD_STORY,
+    payload: newStory,
+    text: 'add new story object to stories'
   };
 };
 

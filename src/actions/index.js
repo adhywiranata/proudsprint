@@ -11,6 +11,12 @@ export const fetchStoryDetails = storyId => ({
   text: 'display story details',
 });
 
+export const addStory = newStory => ({
+  type: ActionTypes.ADD_STORY,
+  payload: newStory,
+  text: 'add new story object to stories',
+});
+
 export const toggleNewStoryModal = isModalVisible => ({
   type: ActionTypes.TOGGLE_NEW_STORY_MODAL,
   text: 'show new story modal window',
