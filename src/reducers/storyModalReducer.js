@@ -31,9 +31,9 @@ const handleChangeNewStoryForm = (state, updatedField) => {
 
 const incrementNewStoryFormId = (state) => {
   const newState = Object.assign({}, state);
-  newState.newStoryForm.id++;
+  newState.newStoryForm.id += 1;
   return newState;
-}
+};
 
 const storyModalReducer = (state = initialState, action) => {
   switch (action.type) {

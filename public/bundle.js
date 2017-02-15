@@ -8762,6 +8762,7 @@ var ADD_STORY = exports.ADD_STORY = 'ADD_STORY';
 
 var TOGGLE_NEW_STORY_MODAL = exports.TOGGLE_NEW_STORY_MODAL = 'TOGGLE_NEW_STORY_MODAL';
 var HANDLE_CHANGE_NEW_STORY_FORM = exports.HANDLE_CHANGE_NEW_STORY_FORM = 'HANDLE_CHANGE_NEW_STORY_FORM';
+var INCREMENT_NEW_STORY_FORM_ID = exports.INCREMENT_NEW_STORY_FORM_ID = 'INCREMENT_NEW_STORY_FORM_ID';
 
 /***/ }),
 /* 79 */
@@ -30653,7 +30654,7 @@ var handleChangeNewStoryForm = function handleChangeNewStoryForm(state, updatedF
 
 var incrementNewStoryFormId = function incrementNewStoryFormId(state) {
   var newState = Object.assign({}, state);
-  newState.newStoryForm.id++;
+  newState.newStoryForm.id += 1;
   return newState;
 };
 
