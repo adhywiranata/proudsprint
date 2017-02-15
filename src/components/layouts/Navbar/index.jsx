@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './navbar.css';
 
-const Navbar = props => { console.log(props.toggleNewStoryModal); return (
+const Navbar = props => (
   <div className={styles.navbar}>
     <button
       className={styles.newBtn}
@@ -14,7 +14,7 @@ const Navbar = props => { console.log(props.toggleNewStoryModal); return (
     <div>Users</div>
     <div>Metrics</div>
   </div>
-)};
+);
 
 Navbar.propTypes = {
   toggleNewStoryModal: React.PropTypes.func.isRequired,

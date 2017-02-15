@@ -13416,7 +13416,8 @@ var _reducers2 = _interopRequireDefault(_reducers);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var store = (0, _redux.createStore)(_reducers2.default);
+var store = (0, _redux.createStore)(_reducers2.default, /* preloadedState, */
+window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 exports.default = store;
 
@@ -13664,7 +13665,7 @@ var _navbar2 = _interopRequireDefault(_navbar);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Navbar = function Navbar(props) {
-  console.log(props.toggleNewStoryModal);return _react2.default.createElement(
+  return _react2.default.createElement(
     'div',
     { className: _navbar2.default.navbar },
     _react2.default.createElement(
@@ -13855,7 +13856,8 @@ var HomeContainer = function (_Component) {
           showStoryDetail: this.showStoryDetail,
           hideStoryDetail: this.hideStoryDetail,
           storyModalData: this.props.storyModalData,
-          toggleNewStoryModal: this.props.toggleNewStoryModal
+          toggleNewStoryModal: this.props.toggleNewStoryModal,
+          handleChangeNewStoryForm: this.props.handleChangeNewStoryForm
         })
       );
     }
@@ -13878,6 +13880,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     toggleNewStoryModal: function toggleNewStoryModal(isModalVisible) {
       return dispatch((0, _actions.toggleNewStoryModal)(isModalVisible));
+    },
+    handleChangeNewStoryForm: function handleChangeNewStoryForm(updatedField) {
+      return dispatch((0, _actions.handleChangeNewStoryForm)(updatedField));
     }
   };
 };
@@ -13905,7 +13910,8 @@ HomeContainer.propTypes = {
       createdAt: _react2.default.PropTypes.string
     }).isRequired
   }).isRequired,
-  toggleNewStoryModal: _react2.default.PropTypes.func.isRequired
+  toggleNewStoryModal: _react2.default.PropTypes.func.isRequired,
+  handleChangeNewStoryForm: _react2.default.PropTypes.func.isRequired
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomeContainer);
@@ -14589,7 +14595,11 @@ var Home = function Home(props) {
       });
     }),
     props.isStoryDetailShow === true && _react2.default.createElement(_StoryItemDetails2.default, { hideStoryDetail: props.hideStoryDetail }),
-    props.storyModalData.isModalVisible === true && _react2.default.createElement(_NewStoryModal2.default, { toggleNewStoryModal: props.toggleNewStoryModal })
+    props.storyModalData.isModalVisible === true && _react2.default.createElement(_NewStoryModal2.default, {
+      storyModalData: props.storyModalData,
+      toggleNewStoryModal: props.toggleNewStoryModal,
+      handleChangeNewStoryForm: props.handleChangeNewStoryForm
+    })
   );
 };
 
@@ -14622,7 +14632,8 @@ Home.propTypes = {
     }).isRequired
   }).isRequired,
 
-  toggleNewStoryModal: _react2.default.PropTypes.func.isRequired
+  toggleNewStoryModal: _react2.default.PropTypes.func.isRequired,
+  handleChangeNewStoryForm: _react2.default.PropTypes.func.isRequired
 };
 
 exports.default = Home;
@@ -30659,7 +30670,7 @@ var NewStoryModal = function NewStoryModal(props) {
     'div',
     null,
     _react2.default.createElement('button', { className: _newStoryModal2.default.popupOverlay, onClick: function onClick() {
-        return props.toggleNewStoryModal();
+        return props.toggleNewStoryModal(false);
       } }),
     _react2.default.createElement(
       'div',
@@ -30670,9 +30681,16 @@ var NewStoryModal = function NewStoryModal(props) {
         _react2.default.createElement(
           'label',
           { htmlFor: 'titleForm' },
-          'Story Title'
+          'Story'
         ),
-        _react2.default.createElement('input', { id: 'titleForm', type: 'text' }),
+        _react2.default.createElement('input', {
+          id: 'titleForm',
+          type: 'text',
+          value: props.storyModalData.newStoryForm.story,
+          onChange: function onChange(e) {
+            return props.handleChangeNewStoryForm({ storyKey: 'story', storyValue: e.target.value });
+          }
+        }),
         _react2.default.createElement(
           'label',
           { htmlFor: 'titleForm' },
@@ -30685,7 +30703,21 @@ var NewStoryModal = function NewStoryModal(props) {
 };
 
 NewStoryModal.propTypes = {
-  toggleNewStoryModal: _react2.default.PropTypes.func.isRequired
+  storyModalData: _react2.default.PropTypes.shape({
+    isModalVisible: _react2.default.PropTypes.bool.isRequired,
+    newStoryForm: _react2.default.PropTypes.shape({
+      id: _react2.default.PropTypes.number.isRequired,
+      category: _react2.default.PropTypes.string.isRequired,
+      user: _react2.default.PropTypes.string,
+      profilePictureUrl: _react2.default.PropTypes.image,
+      story: _react2.default.PropTypes.string,
+      tags: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.string),
+      createdAt: _react2.default.PropTypes.string
+    }).isRequired
+  }).isRequired,
+
+  toggleNewStoryModal: _react2.default.PropTypes.func.isRequired,
+  handleChangeNewStoryForm: _react2.default.PropTypes.func.isRequired
 };
 
 exports.default = NewStoryModal;
