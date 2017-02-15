@@ -8,7 +8,7 @@ const initialState = {
   isModalVisible: false,
   newStoryForm: {
     id: latestId + 1,
-    category: '',
+    category: 'backlog',
     user: '',
     profilePictureUrl: 'http://hansensphotography.com/wp-content/uploads/2010/09/professional-business-portraits.png',
     story: '',

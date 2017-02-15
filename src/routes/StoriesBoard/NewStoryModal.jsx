@@ -6,17 +6,38 @@ const NewStoryModal = props => (
   <div>
     <button className={styles.popupOverlay} onClick={() => props.toggleNewStoryModal(false)} />
     <div className={styles.popupWrapper}>
-      <form>
-        <label htmlFor="titleForm">Story</label>
+      <form onSubmit={() => { console.log('test'); }}>
+        <label htmlFor="storyForm">Story</label>
         <input
-          id="titleForm"
+          id="storyForm"
           type="text"
           value={props.storyModalData.newStoryForm.story}
           onChange={e => props.handleChangeNewStoryForm({ storyKey: 'story', storyValue: e.target.value })}
         />
 
-        <label htmlFor="titleForm">Story Title</label>
-        <input id="titleForm" type="text" />
+        <label htmlFor="categoryForm">
+          Category: {props.storyModalData.newStoryForm.category}
+        </label>
+        <select
+          id="titleForm"
+          value={props.storyModalData.newStoryForm.category}
+          onChange={e => props.handleChangeNewStoryForm({ storyKey: 'category', storyValue: e.target.value })}>
+          <option value="icebox">Icebox</option>
+          <option value="backlog">Backlog</option>
+        </select>
+
+        <label htmlFor="userForm">
+          Requester: {props.storyModalData.newStoryForm.user}
+        </label>
+        <select id="userForm" onChange={e => props.handleChangeNewStoryForm({ storyKey: 'user', storyValue: e.target.value })}>
+          <option value="Budi">Budi</option>
+          <option value="Mike">Mike</option>
+          <option value="John">John</option>
+          <option value="Jose">Jose</option>
+          <option value="Mark">Mark</option>
+        </select>
+
+        <button className={styles.submitBtn}>Add</button>
       </form>
     </div>
   </div>

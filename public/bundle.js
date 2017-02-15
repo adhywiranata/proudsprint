@@ -30607,7 +30607,7 @@ var initialState = {
   isModalVisible: false,
   newStoryForm: {
     id: latestId + 1,
-    category: '',
+    category: 'backlog',
     user: '',
     profilePictureUrl: 'http://hansensphotography.com/wp-content/uploads/2010/09/professional-business-portraits.png',
     story: '',
@@ -30677,14 +30677,16 @@ var NewStoryModal = function NewStoryModal(props) {
       { className: _newStoryModal2.default.popupWrapper },
       _react2.default.createElement(
         'form',
-        null,
+        { onSubmit: function onSubmit() {
+            console.log('test');
+          } },
         _react2.default.createElement(
           'label',
-          { htmlFor: 'titleForm' },
+          { htmlFor: 'storyForm' },
           'Story'
         ),
         _react2.default.createElement('input', {
-          id: 'titleForm',
+          id: 'storyForm',
           type: 'text',
           value: props.storyModalData.newStoryForm.story,
           onChange: function onChange(e) {
@@ -30693,10 +30695,71 @@ var NewStoryModal = function NewStoryModal(props) {
         }),
         _react2.default.createElement(
           'label',
-          { htmlFor: 'titleForm' },
-          'Story Title'
+          { htmlFor: 'categoryForm' },
+          'Category: ',
+          props.storyModalData.newStoryForm.category
         ),
-        _react2.default.createElement('input', { id: 'titleForm', type: 'text' })
+        _react2.default.createElement(
+          'select',
+          {
+            id: 'titleForm',
+            value: props.storyModalData.newStoryForm.category,
+            onChange: function onChange(e) {
+              return props.handleChangeNewStoryForm({ storyKey: 'category', storyValue: e.target.value });
+            } },
+          _react2.default.createElement(
+            'option',
+            { value: 'icebox' },
+            'Icebox'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'backlog' },
+            'Backlog'
+          )
+        ),
+        _react2.default.createElement(
+          'label',
+          { htmlFor: 'userForm' },
+          'Requester: ',
+          props.storyModalData.newStoryForm.user
+        ),
+        _react2.default.createElement(
+          'select',
+          { id: 'userForm', onChange: function onChange(e) {
+              return props.handleChangeNewStoryForm({ storyKey: 'user', storyValue: e.target.value });
+            } },
+          _react2.default.createElement(
+            'option',
+            { value: 'Budi' },
+            'Budi'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'Mike' },
+            'Mike'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'John' },
+            'John'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'Jose' },
+            'Jose'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'Mark' },
+            'Mark'
+          )
+        ),
+        _react2.default.createElement(
+          'button',
+          { className: _newStoryModal2.default.submitBtn },
+          'Add'
+        )
       )
     )
   );
@@ -30731,12 +30794,13 @@ exports = module.exports = __webpack_require__(15)();
 
 
 // module
-exports.push([module.i, ".newStoryModal__popupOverlay___2NCZA {\n  position: fixed;\n  z-index: 998;\n  background: #000;\n  opacity: 0.5;\n  padding: 20px;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  border: 0;\n}\n\n.newStoryModal__popupWrapper___3-d9F {\n  position: fixed;\n  z-index: 999;\n  background: #fff;\n  border: 1px solid rgba(0, 0, 0, .1);\n  border-radius: 10px;\n  padding: 20px;\n  top: 20%;\n  width: 40%;\n  left: 30%;\n  display: inline-flex;\n}\n\nform {\n  width: 100%;\n  padding: 30px;\n}\n\ninput {\n  margin: 10px 0;\n  width: 100%;\n  font-size: 1em;\n  border: 1px solid rbga(0, 0, 0, .1);\n  padding: 5px 10px;\n  outline: none;\n}\n", ""]);
+exports.push([module.i, ".newStoryModal__popupOverlay___2NCZA {\n  position: fixed;\n  z-index: 998;\n  background: #000;\n  opacity: 0.5;\n  padding: 20px;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  border: 0;\n}\n\n.newStoryModal__popupWrapper___3-d9F {\n  position: fixed;\n  z-index: 999;\n  background: #fff;\n  border: 1px solid rgba(0, 0, 0, .1);\n  border-radius: 10px;\n  padding: 20px;\n  top: 20%;\n  width: 40%;\n  left: 30%;\n  display: inline-flex;\n}\n\nform {\n  width: 100%;\n  padding: 30px;\n}\n\ninput, select {\n  margin: 10px 0;\n  width: 100%;\n  font-size: 1em;\n  border: 1px solid rbga(0, 0, 0, .1);\n  padding: 5px 10px;\n  outline: none;\n}\n\n.newStoryModal__submitBtn___1hyia {\n  border: 0;\n  outline: none;\n  background: #26A65B;\n  color: #FFF;\n  padding: 10px 20px;\n  font-size: 1em;\n  border-radius: 8px;\n}\n", ""]);
 
 // exports
 exports.locals = {
 	"popupOverlay": "newStoryModal__popupOverlay___2NCZA",
-	"popupWrapper": "newStoryModal__popupWrapper___3-d9F"
+	"popupWrapper": "newStoryModal__popupWrapper___3-d9F",
+	"submitBtn": "newStoryModal__submitBtn___1hyia"
 };
 
 /***/ }),
