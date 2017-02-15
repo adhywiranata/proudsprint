@@ -10,7 +10,8 @@ const fetchStories = (state) => {
 };
 
 const addStory = (state, newStory) => {
-  const newState = [...state, newStory];
+  const newStoryObj = Object.assign({}, newStory);
+  const newState = [...state, newStoryObj];
   return newState;
 };
 

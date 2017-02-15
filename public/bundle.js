@@ -14059,7 +14059,8 @@ var fetchStories = function fetchStories(state) {
 };
 
 var addStory = function addStory(state, newStory) {
-  var newState = [].concat(_toConsumableArray(state), [newStory]);
+  var newStoryObj = Object.assign({}, newStory);
+  var newState = [].concat(_toConsumableArray(state), [newStoryObj]);
   return newState;
 };
 
