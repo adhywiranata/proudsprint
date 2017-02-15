@@ -2,16 +2,16 @@ import * as ActionTypes from '../actions/constants';
 
 import storiesData from '../../data/stories.json';
 
-const initialState = storiesData.stories;
+const initialState = [];
 
 const fetchStories = (state) => {
-  const newState = Object.assign({}, state);
+  const newState = [...state, ...storiesData.stories];
   return newState;
 };
 
 const storiesReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ActionTypes.FETCH_USER_PROFILE:
+    case ActionTypes.FETCH_STORIES:
       return fetchStories(state);
     default:
       return state;

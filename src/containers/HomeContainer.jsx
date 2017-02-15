@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import StoriesBoard from '../routes/StoriesBoard';
+import { connect } from 'react-redux';
 
-import storiesData from '../../data/stories.json';
+import { fetchStories } from '../actions';
+
+import StoriesBoard from '../routes/StoriesBoard';
 
 class HomeContainer extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      stories: storiesData.stories,
       selectedStory: {
         id: 8,
         category: 'backlog',
@@ -23,6 +24,10 @@ class HomeContainer extends Component {
     this.hideStoryDetail = this.hideStoryDetail.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchStories();
+  }
+
   showStoryDetail() {
     this.setState({ isStoryDetailShow: true });
   }
@@ -35,7 +40,7 @@ class HomeContainer extends Component {
     return (
       <div>
         <StoriesBoard
-          stories={this.state.stories}
+          stories={this.props.storiesData}
           isStoryDetailShow={this.state.isStoryDetailShow}
           showStoryDetail={this.showStoryDetail}
           hideStoryDetail={this.hideStoryDetail}
@@ -45,4 +50,27 @@ class HomeContainer extends Component {
   }
 }
 
-export default HomeContainer;
+const mapStateToProps = state => ({
+  storiesData: state.storiesData,
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchStories: () => dispatch(fetchStories()),
+});
+
+HomeContainer.propTypes = {
+  storiesData: React.PropTypes.arrayOf(
+    React.PropTypes.shape({
+      id: React.PropTypes.number.isRequired,
+      category: React.PropTypes.string.isRequired,
+      user: React.PropTypes.string,
+      profilePictureUrl: React.PropTypes.image,
+      story: React.PropTypes.string,
+      tags: React.PropTypes.arrayOf(React.PropTypes.string),
+      createdAt: React.PropTypes.string,
+    }),
+  ).isRequired,
+  fetchStories: React.PropTypes.func.isRequired,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);
