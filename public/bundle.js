@@ -8758,7 +8758,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var FETCH_STORIES = exports.FETCH_STORIES = 'FETCH_STORIES';
 var FETCH_STORY_DETAILS = exports.FETCH_STORY_DETAILS = 'FETCH_STORY_DETAILS';
-var SHOW_NEW_STORY_MODAL = exports.SHOW_NEW_STORY_MODAL = 'SHOW_NEW_STORY_MODAL';
+var TOGGLE_NEW_STORY_MODAL = exports.TOGGLE_NEW_STORY_MODAL = 'TOGGLE_NEW_STORY_MODAL';
 
 /***/ }),
 /* 79 */
@@ -13555,7 +13555,7 @@ module.exports = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.showNewStoryModal = exports.fetchStoryDetails = exports.fetchStories = undefined;
+exports.toggleNewStoryModal = exports.fetchStoryDetails = exports.fetchStories = undefined;
 
 var _constants = __webpack_require__(78);
 
@@ -13578,10 +13578,11 @@ var fetchStoryDetails = exports.fetchStoryDetails = function fetchStoryDetails(s
   };
 };
 
-var showNewStoryModal = exports.showNewStoryModal = function showNewStoryModal() {
+var toggleNewStoryModal = exports.toggleNewStoryModal = function toggleNewStoryModal(isModalVisible) {
   return {
-    type: ActionTypes.SHOW_NEW_STORY_MODAL,
-    text: 'show new story modal window'
+    type: ActionTypes.TOGGLE_NEW_STORY_MODAL,
+    text: 'show new story modal window',
+    payload: isModalVisible
   };
 };
 
@@ -13920,10 +13921,15 @@ var _storiesReducer = __webpack_require__(140);
 
 var _storiesReducer2 = _interopRequireDefault(_storiesReducer);
 
+var _storyModalReducer = __webpack_require__(317);
+
+var _storyModalReducer2 = _interopRequireDefault(_storyModalReducer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var rootReducer = (0, _redux.combineReducers)({
-  storiesData: _storiesReducer2.default
+  storiesData: _storiesReducer2.default,
+  storiesModalData: _storyModalReducer2.default
 });
 
 exports.default = rootReducer;
@@ -30478,6 +30484,64 @@ _reactDom2.default.render(_react2.default.createElement(
   { store: _store2.default },
   _react2.default.createElement(_routes2.default, null)
 ), document.getElementById('root'));
+
+/***/ }),
+/* 317 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _constants = __webpack_require__(78);
+
+var ActionTypes = _interopRequireWildcard(_constants);
+
+var _stories = __webpack_require__(131);
+
+var _stories2 = _interopRequireDefault(_stories);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var latestId = _stories2.default.stories[_stories2.default.stories.length - 1].id;
+
+var initialState = {
+  isModalVisible: false,
+  newStoryForm: {
+    id: latestId + 1,
+    category: '',
+    user: '',
+    profilePictureUrl: 'http://hansensphotography.com/wp-content/uploads/2010/09/professional-business-portraits.png',
+    story: '',
+    tags: [],
+    createdAt: ''
+  }
+};
+
+var toggleNewStoryModal = function toggleNewStoryModal(state, isModalVisible) {
+  var newState = Object.assign({}, state);
+  newState.isModalVisible = isModalVisible;
+  return newState;
+};
+
+var storyModalReducer = function storyModalReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var action = arguments[1];
+
+  switch (action.type) {
+    case ActionTypes.TOGGLE_NEW_STORY_MODAL:
+      return toggleNewStoryModal(state, action.payload);
+    default:
+      return state;
+  }
+};
+
+exports.default = storyModalReducer;
 
 /***/ })
 /******/ ]);
