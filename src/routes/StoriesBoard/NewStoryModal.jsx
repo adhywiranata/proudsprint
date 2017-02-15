@@ -6,7 +6,14 @@ const NewStoryModal = props => (
   <div>
     <button className={styles.popupOverlay} onClick={() => props.toggleNewStoryModal(false)} />
     <div className={styles.popupWrapper}>
-      <form onSubmit={(e) => { e.preventDefault(); console.log(props.storyModalData.newStoryForm); }}>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          props.addStory(props.storyModalData.newStoryForm);
+          props.toggleNewStoryModal(false);
+        }
+      }
+      >
         <label htmlFor="storyForm">Story</label>
         <input
           id="storyForm"
@@ -21,7 +28,13 @@ const NewStoryModal = props => (
         <select
           id="titleForm"
           value={props.storyModalData.newStoryForm.category}
-          onChange={e => props.handleChangeNewStoryForm({ storyKey: 'category', storyValue: e.target.value })}>
+          onChange={e =>
+            props.handleChangeNewStoryForm({
+              storyKey: 'category',
+              storyValue: e.target.value,
+            })
+          }
+        >
           <option value="icebox">Icebox</option>
           <option value="backlog">Backlog</option>
         </select>
@@ -59,6 +72,7 @@ NewStoryModal.propTypes = {
 
   toggleNewStoryModal: React.PropTypes.func.isRequired,
   handleChangeNewStoryForm: React.PropTypes.func.isRequired,
+  addStory: React.PropTypes.func.isRequired,
 };
 
 export default NewStoryModal;

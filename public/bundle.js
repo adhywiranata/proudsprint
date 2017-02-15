@@ -14619,7 +14619,8 @@ var Home = function Home(props) {
     props.storyModalData.isModalVisible === true && _react2.default.createElement(_NewStoryModal2.default, {
       storyModalData: props.storyModalData,
       toggleNewStoryModal: props.toggleNewStoryModal,
-      handleChangeNewStoryForm: props.handleChangeNewStoryForm
+      handleChangeNewStoryForm: props.handleChangeNewStoryForm,
+      addStory: props.addStory
     })
   );
 };
@@ -14654,7 +14655,8 @@ Home.propTypes = {
   }).isRequired,
 
   toggleNewStoryModal: _react2.default.PropTypes.func.isRequired,
-  handleChangeNewStoryForm: _react2.default.PropTypes.func.isRequired
+  handleChangeNewStoryForm: _react2.default.PropTypes.func.isRequired,
+  addStory: _react2.default.PropTypes.func.isRequired
 };
 
 exports.default = Home;
@@ -30698,9 +30700,13 @@ var NewStoryModal = function NewStoryModal(props) {
       { className: _newStoryModal2.default.popupWrapper },
       _react2.default.createElement(
         'form',
-        { onSubmit: function onSubmit(e) {
-            e.preventDefault();console.log(props.storyModalData.newStoryForm);
-          } },
+        {
+          onSubmit: function onSubmit(e) {
+            e.preventDefault();
+            props.addStory(props.storyModalData.newStoryForm);
+            props.toggleNewStoryModal(false);
+          }
+        },
         _react2.default.createElement(
           'label',
           { htmlFor: 'storyForm' },
@@ -30726,8 +30732,12 @@ var NewStoryModal = function NewStoryModal(props) {
             id: 'titleForm',
             value: props.storyModalData.newStoryForm.category,
             onChange: function onChange(e) {
-              return props.handleChangeNewStoryForm({ storyKey: 'category', storyValue: e.target.value });
-            } },
+              return props.handleChangeNewStoryForm({
+                storyKey: 'category',
+                storyValue: e.target.value
+              });
+            }
+          },
           _react2.default.createElement(
             'option',
             { value: 'icebox' },
@@ -30801,7 +30811,8 @@ NewStoryModal.propTypes = {
   }).isRequired,
 
   toggleNewStoryModal: _react2.default.PropTypes.func.isRequired,
-  handleChangeNewStoryForm: _react2.default.PropTypes.func.isRequired
+  handleChangeNewStoryForm: _react2.default.PropTypes.func.isRequired,
+  addStory: _react2.default.PropTypes.func.isRequired
 };
 
 exports.default = NewStoryModal;
