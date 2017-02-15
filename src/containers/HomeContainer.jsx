@@ -5,6 +5,7 @@ import {
   fetchStories,
   toggleNewStoryModal,
   handleChangeNewStoryForm,
+  addStory,
 } from '../actions';
 
 import StoriesBoard from '../routes/StoriesBoard';
@@ -51,6 +52,7 @@ class HomeContainer extends Component {
           storyModalData={this.props.storyModalData}
           toggleNewStoryModal={this.props.toggleNewStoryModal}
           handleChangeNewStoryForm={this.props.handleChangeNewStoryForm}
+          addStory={this.props.addStory}
         />
       </div>
     );
@@ -66,6 +68,7 @@ const mapDispatchToProps = dispatch => ({
   fetchStories: () => dispatch(fetchStories()),
   toggleNewStoryModal: isModalVisible => dispatch(toggleNewStoryModal(isModalVisible)),
   handleChangeNewStoryForm: updatedField => dispatch(handleChangeNewStoryForm(updatedField)),
+  addStory: newStory => dispatch(addStory(newStory)),
 });
 
 HomeContainer.propTypes = {
@@ -95,6 +98,7 @@ HomeContainer.propTypes = {
   }).isRequired,
   toggleNewStoryModal: React.PropTypes.func.isRequired,
   handleChangeNewStoryForm: React.PropTypes.func.isRequired,
+  addStory: React.PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);

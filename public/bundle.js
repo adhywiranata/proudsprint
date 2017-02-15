@@ -13866,7 +13866,8 @@ var HomeContainer = function (_Component) {
           hideStoryDetail: this.hideStoryDetail,
           storyModalData: this.props.storyModalData,
           toggleNewStoryModal: this.props.toggleNewStoryModal,
-          handleChangeNewStoryForm: this.props.handleChangeNewStoryForm
+          handleChangeNewStoryForm: this.props.handleChangeNewStoryForm,
+          addStory: this.props.addStory
         })
       );
     }
@@ -13892,6 +13893,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     handleChangeNewStoryForm: function handleChangeNewStoryForm(updatedField) {
       return dispatch((0, _actions.handleChangeNewStoryForm)(updatedField));
+    },
+    addStory: function addStory(newStory) {
+      return dispatch((0, _actions.addStory)(newStory));
     }
   };
 };
@@ -13920,7 +13924,8 @@ HomeContainer.propTypes = {
     }).isRequired
   }).isRequired,
   toggleNewStoryModal: _react2.default.PropTypes.func.isRequired,
-  handleChangeNewStoryForm: _react2.default.PropTypes.func.isRequired
+  handleChangeNewStoryForm: _react2.default.PropTypes.func.isRequired,
+  addStory: _react2.default.PropTypes.func.isRequired
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomeContainer);
