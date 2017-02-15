@@ -28,3 +28,8 @@ export const handleChangeNewStoryForm = updatedField => ({
   text: 'change form state',
   payload: updatedField,
 });
+
+export const incrementNewStoryFormId = () => ({
+  type: ActionTypes.INCREMENT_NEW_STORY_FORM_ID,
+  text: 'new story has been created. add story id by 1',
+});

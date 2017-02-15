@@ -13560,7 +13560,7 @@ module.exports = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.handleChangeNewStoryForm = exports.toggleNewStoryModal = exports.addStory = exports.fetchStoryDetails = exports.fetchStories = undefined;
+exports.incrementNewStoryFormId = exports.handleChangeNewStoryForm = exports.toggleNewStoryModal = exports.addStory = exports.fetchStoryDetails = exports.fetchStories = undefined;
 
 var _constants = __webpack_require__(78);
 
@@ -13604,6 +13604,13 @@ var handleChangeNewStoryForm = exports.handleChangeNewStoryForm = function handl
     type: ActionTypes.HANDLE_CHANGE_NEW_STORY_FORM,
     text: 'change form state',
     payload: updatedField
+  };
+};
+
+var incrementNewStoryFormId = exports.incrementNewStoryFormId = function incrementNewStoryFormId() {
+  return {
+    type: ActionTypes.INCREMENT_NEW_STORY_FORM_ID,
+    text: 'new story has been created. add story id by 1'
   };
 };
 
