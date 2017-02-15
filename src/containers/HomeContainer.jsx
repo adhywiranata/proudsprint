@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchStories } from '../actions';
+import { fetchStories, toggleNewStoryModal } from '../actions';
 
 import StoriesBoard from '../routes/StoriesBoard';
 
@@ -45,6 +45,7 @@ class HomeContainer extends Component {
           showStoryDetail={this.showStoryDetail}
           hideStoryDetail={this.hideStoryDetail}
           storyModalData={this.props.storyModalData}
+          toggleNewStoryModal={this.props.toggleNewStoryModal}
         />
       </div>
     );
@@ -58,6 +59,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchStories: () => dispatch(fetchStories()),
+  toggleNewStoryModal: isModalVisible => dispatch(toggleNewStoryModal(isModalVisible)),
 });
 
 HomeContainer.propTypes = {
@@ -85,6 +87,7 @@ HomeContainer.propTypes = {
       createdAt: React.PropTypes.string,
     }).isRequired,
   }).isRequired,
+  toggleNewStoryModal: React.PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);

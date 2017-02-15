@@ -24,64 +24,16 @@
   display: inline-flex;
 }
 
-.imageContainer {
-  width: 20%;
-  position: relative;
-  text-align: center;
-  background: #446CB3;
-}
-
-.ProfilePicture {
+form {
   width: 100%;
+  padding: 30px;
 }
 
-.itemPersonName {
-  position: absolute;
-  width: 91%;
-  bottom: 0px;
-  left: 0;
-  background: #446CB3;
-  color: #FFF;
-  padding: 3px 5px;
-  font-size: 0.8em;
-}
-
-.itemContainer {
-  width: 75%;
-  padding: 0px 10px;
-}
-
-.itemTitle {
-  color: #3498DB;
-  text-decoration: none;
-  text-align: left;
-  font-size: 1.2em;
-  margin: 0;
-}
-
-.itemBadgeList {
-  width: 100%;
+input {
   margin: 10px 0;
-  text-align: left;
-}
-
-.itemBadgeList > span {
-  color: #FFF;
-  border-radius: 5px;
-  padding: 3px 10px;
-  margin-right: 5px;
-  font-size: 0.8em;
-  cursor: pointer;
-}
-
-.improvementBadge {
-  background: #4CA1AF;
-}
-
-.bugBadge {
-  background: #D64541;
-}
-
-.niceToHaveBadge {
-  background: #F4B350;
+  width: 100%;
+  font-size: 1em;
+  border: 1px solid rbga(0, 0, 0, .1);
+  padding: 5px 10px;
+  outline: none;
 }

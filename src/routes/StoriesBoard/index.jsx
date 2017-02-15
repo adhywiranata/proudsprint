@@ -38,7 +38,7 @@ const Home = (props) => {
       }
       {
         props.storyModalData.isModalVisible === true &&
-        <NewStoryModal />
+        <NewStoryModal toggleNewStoryModal={props.toggleNewStoryModal} />
       }
     </div>
   );
@@ -74,6 +74,8 @@ Home.propTypes = {
       createdAt: React.PropTypes.string,
     }).isRequired,
   }).isRequired,
+
+  toggleNewStoryModal: React.PropTypes.func.isRequired,
 };
 
 export default Home;

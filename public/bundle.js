@@ -13615,13 +13615,19 @@ var _Navbar2 = _interopRequireDefault(_Navbar);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Header = function Header() {
+var Header = function Header(props) {
   return _react2.default.createElement(
     'div',
     { className: _header2.default.header },
     _react2.default.createElement(_Topbar2.default, null),
-    _react2.default.createElement(_Navbar2.default, null)
+    _react2.default.createElement(_Navbar2.default, { toggleNewStoryModal: function toggleNewStoryModal() {
+        return props.toggleNewStoryModal(true);
+      } })
   );
+};
+
+Header.propTypes = {
+  toggleNewStoryModal: _react2.default.PropTypes.func.isRequired
 };
 
 exports.default = Header;
@@ -13647,13 +13653,16 @@ var _navbar2 = _interopRequireDefault(_navbar);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Navbar = function Navbar() {
-  return _react2.default.createElement(
+var Navbar = function Navbar(props) {
+  console.log(props.toggleNewStoryModal);return _react2.default.createElement(
     'div',
     { className: _navbar2.default.navbar },
     _react2.default.createElement(
       'button',
-      { className: _navbar2.default.newBtn },
+      {
+        className: _navbar2.default.newBtn,
+        onClick: props.toggleNewStoryModal
+      },
       'Add New Story'
     ),
     _react2.default.createElement(
@@ -13672,6 +13681,10 @@ var Navbar = function Navbar() {
       'Metrics'
     )
   );
+};
+
+Navbar.propTypes = {
+  toggleNewStoryModal: _react2.default.PropTypes.func.isRequired
 };
 
 exports.default = Navbar;
@@ -13831,7 +13844,8 @@ var HomeContainer = function (_Component) {
           isStoryDetailShow: this.state.isStoryDetailShow,
           showStoryDetail: this.showStoryDetail,
           hideStoryDetail: this.hideStoryDetail,
-          storyModalData: this.props.storyModalData
+          storyModalData: this.props.storyModalData,
+          toggleNewStoryModal: this.props.toggleNewStoryModal
         })
       );
     }
@@ -13851,6 +13865,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchStories: function fetchStories() {
       return dispatch((0, _actions.fetchStories)());
+    },
+    toggleNewStoryModal: function toggleNewStoryModal(isModalVisible) {
+      return dispatch((0, _actions.toggleNewStoryModal)(isModalVisible));
     }
   };
 };
@@ -13877,7 +13894,8 @@ HomeContainer.propTypes = {
       tags: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.string),
       createdAt: _react2.default.PropTypes.string
     }).isRequired
-  }).isRequired
+  }).isRequired,
+  toggleNewStoryModal: _react2.default.PropTypes.func.isRequired
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomeContainer);
@@ -14561,7 +14579,7 @@ var Home = function Home(props) {
       });
     }),
     props.isStoryDetailShow === true && _react2.default.createElement(_StoryItemDetails2.default, { hideStoryDetail: props.hideStoryDetail }),
-    props.storyModalData.isModalVisible === true && _react2.default.createElement(_NewStoryModal2.default, null)
+    props.storyModalData.isModalVisible === true && _react2.default.createElement(_NewStoryModal2.default, { toggleNewStoryModal: props.toggleNewStoryModal })
   );
 };
 
@@ -14592,7 +14610,9 @@ Home.propTypes = {
       tags: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.string),
       createdAt: _react2.default.PropTypes.string
     }).isRequired
-  }).isRequired
+  }).isRequired,
+
+  toggleNewStoryModal: _react2.default.PropTypes.func.isRequired
 };
 
 exports.default = Home;
@@ -30616,20 +30636,39 @@ var _newStoryModal2 = _interopRequireDefault(_newStoryModal);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var NewStoryModal = function NewStoryModal() {
+var NewStoryModal = function NewStoryModal(props) {
   return _react2.default.createElement(
     'div',
     null,
-    _react2.default.createElement('button', { className: _newStoryModal2.default.popupOverlay }),
+    _react2.default.createElement('button', { className: _newStoryModal2.default.popupOverlay, onClick: function onClick() {
+        return props.toggleNewStoryModal();
+      } }),
     _react2.default.createElement(
       'div',
       { className: _newStoryModal2.default.popupWrapper },
-      'wawa'
+      _react2.default.createElement(
+        'form',
+        null,
+        _react2.default.createElement(
+          'label',
+          { htmlFor: 'titleForm' },
+          'Story Title'
+        ),
+        _react2.default.createElement('input', { id: 'titleForm', type: 'text' }),
+        _react2.default.createElement(
+          'label',
+          { htmlFor: 'titleForm' },
+          'Story Title'
+        ),
+        _react2.default.createElement('input', { id: 'titleForm', type: 'text' })
+      )
     )
   );
 };
 
-NewStoryModal.propTypes = {};
+NewStoryModal.propTypes = {
+  toggleNewStoryModal: _react2.default.PropTypes.func.isRequired
+};
 
 exports.default = NewStoryModal;
 
@@ -30642,21 +30681,12 @@ exports = module.exports = __webpack_require__(15)();
 
 
 // module
-exports.push([module.i, ".newStoryModal__popupOverlay___2NCZA {\n  position: fixed;\n  z-index: 998;\n  background: #000;\n  opacity: 0.5;\n  padding: 20px;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  border: 0;\n}\n\n.newStoryModal__popupWrapper___3-d9F {\n  position: fixed;\n  z-index: 999;\n  background: #fff;\n  border: 1px solid rgba(0, 0, 0, .1);\n  border-radius: 10px;\n  padding: 20px;\n  top: 20%;\n  width: 40%;\n  left: 30%;\n  display: inline-flex;\n}\n\n.newStoryModal__imageContainer___1evsD {\n  width: 20%;\n  position: relative;\n  text-align: center;\n  background: #446CB3;\n}\n\n.newStoryModal__ProfilePicture___3fFJ6 {\n  width: 100%;\n}\n\n.newStoryModal__itemPersonName___rzECP {\n  position: absolute;\n  width: 91%;\n  bottom: 0px;\n  left: 0;\n  background: #446CB3;\n  color: #FFF;\n  padding: 3px 5px;\n  font-size: 0.8em;\n}\n\n.newStoryModal__itemContainer___Nqhr- {\n  width: 75%;\n  padding: 0px 10px;\n}\n\n.newStoryModal__itemTitle___2Az4E {\n  color: #3498DB;\n  text-decoration: none;\n  text-align: left;\n  font-size: 1.2em;\n  margin: 0;\n}\n\n.newStoryModal__itemBadgeList___3lwmT {\n  width: 100%;\n  margin: 10px 0;\n  text-align: left;\n}\n\n.newStoryModal__itemBadgeList___3lwmT > span {\n  color: #FFF;\n  border-radius: 5px;\n  padding: 3px 10px;\n  margin-right: 5px;\n  font-size: 0.8em;\n  cursor: pointer;\n}\n\n.newStoryModal__improvementBadge___yKlP0 {\n  background: #4CA1AF;\n}\n\n.newStoryModal__bugBadge___3zjPV {\n  background: #D64541;\n}\n\n.newStoryModal__niceToHaveBadge___1dmy0 {\n  background: #F4B350;\n}\n", ""]);
+exports.push([module.i, ".newStoryModal__popupOverlay___2NCZA {\n  position: fixed;\n  z-index: 998;\n  background: #000;\n  opacity: 0.5;\n  padding: 20px;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  border: 0;\n}\n\n.newStoryModal__popupWrapper___3-d9F {\n  position: fixed;\n  z-index: 999;\n  background: #fff;\n  border: 1px solid rgba(0, 0, 0, .1);\n  border-radius: 10px;\n  padding: 20px;\n  top: 20%;\n  width: 40%;\n  left: 30%;\n  display: inline-flex;\n}\n\nform {\n  width: 100%;\n  padding: 30px;\n}\n\ninput {\n  margin: 10px 0;\n  width: 100%;\n  font-size: 1em;\n  border: 1px solid rbga(0, 0, 0, .1);\n  padding: 5px 10px;\n  outline: none;\n}\n", ""]);
 
 // exports
 exports.locals = {
 	"popupOverlay": "newStoryModal__popupOverlay___2NCZA",
-	"popupWrapper": "newStoryModal__popupWrapper___3-d9F",
-	"imageContainer": "newStoryModal__imageContainer___1evsD",
-	"ProfilePicture": "newStoryModal__ProfilePicture___3fFJ6",
-	"itemPersonName": "newStoryModal__itemPersonName___rzECP",
-	"itemContainer": "newStoryModal__itemContainer___Nqhr-",
-	"itemTitle": "newStoryModal__itemTitle___2Az4E",
-	"itemBadgeList": "newStoryModal__itemBadgeList___3lwmT",
-	"improvementBadge": "newStoryModal__improvementBadge___yKlP0",
-	"bugBadge": "newStoryModal__bugBadge___3zjPV",
-	"niceToHaveBadge": "newStoryModal__niceToHaveBadge___1dmy0"
+	"popupWrapper": "newStoryModal__popupWrapper___3-d9F"
 };
 
 /***/ }),
