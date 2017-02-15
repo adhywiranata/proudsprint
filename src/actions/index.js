@@ -1,0 +1,17 @@
+import * as ActionTypes from './constants';
+
+export const fetchStories = () => ({
+  type: ActionTypes.FETCH_STORIES,
+  text: 'select all stories',
+});
+
+export const fetchStoryDetails = storyId => ({
+  type: ActionTypes.FETCH_STORY_DETAILS,
+  payload: storyId,
+  text: 'display story details',
+});
+
+export const showNewStoryModal = () => ({
+  type: ActionTypes.SHOW_NEW_STORY_MODAL,
+  text: 'show new story modal window',
+});
