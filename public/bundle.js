@@ -8758,7 +8758,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 var FETCH_STORIES = exports.FETCH_STORIES = 'FETCH_STORIES';
 var FETCH_STORY_DETAILS = exports.FETCH_STORY_DETAILS = 'FETCH_STORY_DETAILS';
+
 var TOGGLE_NEW_STORY_MODAL = exports.TOGGLE_NEW_STORY_MODAL = 'TOGGLE_NEW_STORY_MODAL';
+var HANDLE_CHANGE_NEW_STORY_FORM = exports.HANDLE_CHANGE_NEW_STORY_FORM = 'HANDLE_CHANGE_NEW_STORY_FORM';
 
 /***/ }),
 /* 79 */
@@ -13555,7 +13557,7 @@ module.exports = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.toggleNewStoryModal = exports.fetchStoryDetails = exports.fetchStories = undefined;
+exports.handleChangeNewStoryForm = exports.toggleNewStoryModal = exports.fetchStoryDetails = exports.fetchStories = undefined;
 
 var _constants = __webpack_require__(78);
 
@@ -13583,6 +13585,14 @@ var toggleNewStoryModal = exports.toggleNewStoryModal = function toggleNewStoryM
     type: ActionTypes.TOGGLE_NEW_STORY_MODAL,
     text: 'show new story modal window',
     payload: isModalVisible
+  };
+};
+
+var handleChangeNewStoryForm = exports.handleChangeNewStoryForm = function handleChangeNewStoryForm(updatedField) {
+  return {
+    type: ActionTypes.HANDLE_CHANGE_NEW_STORY_FORM,
+    text: 'change form state',
+    payload: updatedField
   };
 };
 
@@ -30601,6 +30611,12 @@ var toggleNewStoryModal = function toggleNewStoryModal(state, isModalVisible) {
   return newState;
 };
 
+var handleChangeNewStoryForm = function handleChangeNewStoryForm(state, updatedField) {
+  var newState = Object.assign({}, state);
+  newState.newStoryForm[updatedField.storyKey] = updatedField.storyValue;
+  return newState;
+};
+
 var storyModalReducer = function storyModalReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
   var action = arguments[1];
@@ -30608,6 +30624,8 @@ var storyModalReducer = function storyModalReducer() {
   switch (action.type) {
     case ActionTypes.TOGGLE_NEW_STORY_MODAL:
       return toggleNewStoryModal(state, action.payload);
+    case ActionTypes.HANDLE_CHANGE_NEW_STORY_FORM:
+      return handleChangeNewStoryForm(state, action.payload);
     default:
       return state;
   }

@@ -16,3 +16,9 @@ export const toggleNewStoryModal = isModalVisible => ({
   text: 'show new story modal window',
   payload: isModalVisible,
 });
+
+export const handleChangeNewStoryForm = updatedField => ({
+  type: ActionTypes.HANDLE_CHANGE_NEW_STORY_FORM,
+  text: 'change form state',
+  payload: updatedField,
+});
