@@ -13651,6 +13651,11 @@ var Navbar = function Navbar() {
     'div',
     { className: _navbar2.default.navbar },
     _react2.default.createElement(
+      'button',
+      { className: _navbar2.default.newBtn },
+      'Add New Story'
+    ),
+    _react2.default.createElement(
       'div',
       { className: _navbar2.default.active },
       'Stories'
@@ -14559,12 +14564,13 @@ exports = module.exports = __webpack_require__(15)();
 
 
 // module
-exports.push([module.i, ".navbar__navbar___1CKec {\n  background: #FFF;\n  color: #222;\n  height: auto;\n  overflow: hidden;\n  width: 100%;\n  padding: 5px 20px 0px 20px;\n  box-sizing: border-box;\n  border-bottom: 1px solid rgba(0, 0, 0, .1);\n}\n\n.navbar__navbar___1CKec > div {\n  float: left;\n  margin-top: 5px;\n  cursor: pointer;\n  padding: 0 20px;\n  padding-bottom: 10px;\n}\n\n.navbar__navbar___1CKec > .navbar__active___1fSLm {\n  border-bottom: 3px solid #2C3E50;\n}\n", ""]);
+exports.push([module.i, ".navbar__navbar___1CKec {\n  background: #FFF;\n  color: #222;\n  height: auto;\n  overflow: hidden;\n  width: 100%;\n  padding: 5px 20px 0px 20px;\n  box-sizing: border-box;\n  border-bottom: 1px solid rgba(0, 0, 0, .1);\n}\n\n.navbar__navbar___1CKec > div {\n  float: left;\n  margin-top: 5px;\n  cursor: pointer;\n  padding: 0 20px;\n  padding-bottom: 10px;\n}\n\n.navbar__navbar___1CKec > .navbar__active___1fSLm {\n  border-bottom: 3px solid #2C3E50;\n}\n\n.navbar__newBtn___XyG9E {\n  background: #EB9532;\n  color: #FFFFFF;\n  border-radius: 8px;\n  border: 0;\n  outline: none;\n  padding: 8px 25px;\n  cursor: pointer;\n  margin: 0px;\n  font-size: 0.8em;\n}\n", ""]);
 
 // exports
 exports.locals = {
 	"navbar": "navbar__navbar___1CKec",
-	"active": "navbar__active___1fSLm"
+	"active": "navbar__active___1fSLm",
+	"newBtn": "navbar__newBtn___XyG9E"
 };
 
 /***/ }),
