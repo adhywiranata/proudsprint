@@ -30651,6 +30651,12 @@ var handleChangeNewStoryForm = function handleChangeNewStoryForm(state, updatedF
   return newState;
 };
 
+var incrementNewStoryFormId = function incrementNewStoryFormId(state) {
+  var newState = Object.assign({}, state);
+  newState.newStoryForm.id++;
+  return newState;
+};
+
 var storyModalReducer = function storyModalReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
   var action = arguments[1];
@@ -30660,6 +30666,8 @@ var storyModalReducer = function storyModalReducer() {
       return toggleNewStoryModal(state, action.payload);
     case ActionTypes.HANDLE_CHANGE_NEW_STORY_FORM:
       return handleChangeNewStoryForm(state, action.payload);
+    case ActionTypes.INCREMENT_NEW_STORY_FORM_ID:
+      return incrementNewStoryFormId(state);
     default:
       return state;
   }

@@ -29,12 +29,20 @@ const handleChangeNewStoryForm = (state, updatedField) => {
   return newState;
 };
 
+const incrementNewStoryFormId = (state) => {
+  const newState = Object.assign({}, state);
+  newState.newStoryForm.id++;
+  return newState;
+}
+
 const storyModalReducer = (state = initialState, action) => {
   switch (action.type) {
     case ActionTypes.TOGGLE_NEW_STORY_MODAL:
       return toggleNewStoryModal(state, action.payload);
     case ActionTypes.HANDLE_CHANGE_NEW_STORY_FORM:
       return handleChangeNewStoryForm(state, action.payload);
+    case ActionTypes.INCREMENT_NEW_STORY_FORM_ID:
+      return incrementNewStoryFormId(state);
     default:
       return state;
   }
