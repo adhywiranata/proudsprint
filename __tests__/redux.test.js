@@ -10,10 +10,9 @@ import storiesData from '../data/stories.json';
 // Testing Action Creators
 describe('actions', () => {
   it('should create action to fetch stories', () => {
-    const text = 'select all stories';
     const expectedAction = {
       type: ActionTypes.FETCH_STORIES,
-      text,
+      text: 'select all stories',
     };
     expect(Actions.fetchStories()).toEqual(expectedAction);
   });
