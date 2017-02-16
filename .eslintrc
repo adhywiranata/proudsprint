@@ -3,11 +3,15 @@
   "plugins": [
       "react",
       "jsx-a11y",
-      "import"
+      "import",
+      "jest"
   ],
   "globals": {
     "document": true,
     "window": true,
-    "fetch": true,
+    "fetch": true
+  },
+  "env": {
+    "jest": true
   }
 }
