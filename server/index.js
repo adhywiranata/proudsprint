@@ -14,4 +14,6 @@ app.get('*', (request, response) => {
   response.sendFile(path.resolve(__dirname, '../public', 'index.html'));
 });
 
-app.listen(port);
+app.listen(port, function() {
+  console.log('Server is running on port ' + port);
+});
