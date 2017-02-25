@@ -37,7 +37,7 @@ export const incrementNewStoryFormId = () => ({
 });
 
 const fetchStoriesAsync = () =>
-  fetch('http://localhost:3000/stories', {
+  fetch('http://localhost:3000/stories?_embed=users', {
     method: 'GET',
     mode: 'cors',
   });

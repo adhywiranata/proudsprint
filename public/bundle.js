@@ -8832,7 +8832,7 @@ var incrementNewStoryFormId = exports.incrementNewStoryFormId = function increme
 };
 
 var fetchStoriesAsync = function fetchStoriesAsync() {
-  return fetch('http://localhost:3000/stories', {
+  return fetch('http://localhost:3000/stories?_embed=users', {
     method: 'GET',
     mode: 'cors'
   });
