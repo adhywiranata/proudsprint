@@ -1,9 +1,10 @@
 import * as ActionTypes from './constants';
 
 // Action Creators
-export const fetchStories = () => ({
+export const fetchStories = stories => ({
   type: ActionTypes.FETCH_STORIES,
   text: 'select all stories',
+  stories,
 });
 
 export const fetchStoryDetails = storyId => ({

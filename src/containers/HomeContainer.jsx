@@ -66,8 +66,26 @@ const mapStateToProps = state => ({
   storyModalData: state.storyModalData,
 });
 
+const fetchStoriesAsync = () =>
+  fetch('http://localhost:3000/stories', {
+    method: 'GET',
+    mode: 'cors',
+  });
+
 const mapDispatchToProps = dispatch => ({
-  fetchStories: () => dispatch(fetchStories()),
+  fetchStories: () => {
+    dispatch(fetchStories([]));
+    setTimeout(
+      () => {
+        fetchStoriesAsync()
+        .then(response => response.json())
+        .then(json => dispatch(fetchStories(json)))
+        .catch((ex) => {
+          console.log('parsing failed', ex);
+        });
+      }
+    , 2000);
+  },
   toggleNewStoryModal: isModalVisible => dispatch(toggleNewStoryModal(isModalVisible)),
   handleChangeNewStoryForm: updatedField => dispatch(handleChangeNewStoryForm(updatedField)),
   addStory: newStory => dispatch(addStory(newStory)),

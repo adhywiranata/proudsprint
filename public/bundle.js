@@ -8783,10 +8783,11 @@ var ActionTypes = _interopRequireWildcard(_constants);
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 // Action Creators
-var fetchStories = exports.fetchStories = function fetchStories() {
+var fetchStories = exports.fetchStories = function fetchStories(stories) {
   return {
     type: ActionTypes.FETCH_STORIES,
-    text: 'select all stories'
+    text: 'select all stories',
+    stories: stories
   };
 };
 
@@ -13487,8 +13488,12 @@ var _reducers2 = _interopRequireDefault(_reducers);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var middleware = (0, _redux.applyMiddleware)(_reduxThunk2.default);
+
 var store = (0, _redux.createStore)(_reducers2.default, /* preloadedState, */
-(0, _redux.applyMiddleware)(_reduxThunk2.default), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+(0, _redux.compose)(middleware, window.devToolsExtension ? window.devToolsExtension() : function (f) {
+  return f;
+}));
 
 exports.default = store;
 
@@ -13503,129 +13508,7 @@ module.exports = __webpack_require__(206);
 
 
 /***/ }),
-/* 132 */
-/***/ (function(module, exports) {
-
-module.exports = {
-	"users": [
-		{
-			"id": 1,
-			"username": "Jose",
-			"email": "jose.sanjose@proudsprint.com",
-			"password": "123123123",
-			"profilePictureUrl": "http://hansensphotography.com/wp-content/uploads/2010/09/professional-business-portraits.png"
-		},
-		{
-			"id": 2,
-			"username": "Mike",
-			"email": "mikey@proudsprint.com",
-			"password": "321321321",
-			"profilePictureUrl": "http://socialpro.miguelvasquez.net/public/avatar/large_johndoe_18gu2qv.jpg"
-		},
-		{
-			"id": 3,
-			"username": "Judie",
-			"email": "jude@proudsprint.com",
-			"password": "321321321",
-			"profilePictureUrl": "http://www.legalwebpro.com/images/user/1101_1200/1139/S_08final2_2.jpg"
-		},
-		{
-			"id": 4,
-			"username": "Robert",
-			"email": "robb.ert@proudsprint.com",
-			"password": "321321321",
-			"profilePictureUrl": "https://s-media-cache-ak0.pinimg.com/236x/f1/77/e3/f177e353bf4ddbd39baae92353349a85.jpg"
-		}
-	],
-	"stories": [
-		{
-			"id": 1,
-			"category": "icebox",
-			"user": "Jose",
-			"profilePictureUrl": "http://hansensphotography.com/wp-content/uploads/2010/09/professional-business-portraits.png",
-			"story": "Add to Cart should be available on all pages containing a product and several other functionalities",
-			"tags": [
-				"improvement",
-				"bug"
-			],
-			"createdAt": "20-20-2016"
-		},
-		{
-			"id": 2,
-			"category": "backlog",
-			"user": "Mike",
-			"profilePictureUrl": "http://socialpro.miguelvasquez.net/public/avatar/large_johndoe_18gu2qv.jpg",
-			"story": "Products should contain items dimensions and weight for logistics",
-			"tags": [
-				"improvement",
-				"bug"
-			],
-			"createdAt": "20-20-2016"
-		},
-		{
-			"id": 3,
-			"category": "current",
-			"user": "Judie",
-			"profilePictureUrl": "http://www.legalwebpro.com/images/user/1101_1200/1139/S_08final2_2.jpg",
-			"story": "User cannot sign up using facebook",
-			"tags": [
-				"improvement",
-				"bug"
-			],
-			"createdAt": "20-20-2016"
-		},
-		{
-			"id": 4,
-			"category": "delivered",
-			"user": "Robert",
-			"profilePictureUrl": "https://s-media-cache-ak0.pinimg.com/236x/f1/77/e3/f177e353bf4ddbd39baae92353349a85.jpg",
-			"story": "Add to Cart should be available on all pages containing a product and several other functionalities",
-			"tags": [
-				"improvement",
-				"bug"
-			],
-			"createdAt": "20-20-2016"
-		},
-		{
-			"id": 5,
-			"category": "done",
-			"user": "Mike",
-			"profilePictureUrl": "http://socialpro.miguelvasquez.net/public/avatar/large_johndoe_18gu2qv.jpg",
-			"story": "Add to Cart should be available on all pages containing a product and several other functionalities",
-			"tags": [
-				"improvement",
-				"bug"
-			],
-			"createdAt": "20-20-2016"
-		},
-		{
-			"id": 6,
-			"category": "backlog",
-			"user": "Judie",
-			"profilePictureUrl": "http://www.legalwebpro.com/images/user/1101_1200/1139/S_08final2_2.jpg",
-			"story": "Products should contain items dimensions and weight for logistics",
-			"tags": [
-				"improvement",
-				"bug"
-			],
-			"createdAt": "20-20-2016"
-		},
-		{
-			"id": 7,
-			"category": "backlog",
-			"user": "Robert",
-			"profilePictureUrl": "https://s-media-cache-ak0.pinimg.com/236x/f1/77/e3/f177e353bf4ddbd39baae92353349a85.jpg",
-			"story": "Products should contain items dimensions and weight for logistics",
-			"tags": [
-				"improvement",
-				"bug"
-			],
-			"createdAt": "20-20-2016"
-		}
-	]
-};
-
-/***/ }),
+/* 132 */,
 /* 133 */
 /***/ (function(module, exports) {
 
@@ -14020,10 +13903,26 @@ var mapStateToProps = function mapStateToProps(state) {
   };
 };
 
+var fetchStoriesAsync = function fetchStoriesAsync() {
+  return fetch('http://localhost:3000/stories', {
+    method: 'GET',
+    mode: 'cors'
+  });
+};
+
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchStories: function fetchStories() {
-      return dispatch((0, _actions.fetchStories)());
+      dispatch((0, _actions.fetchStories)([]));
+      setTimeout(function () {
+        fetchStoriesAsync().then(function (response) {
+          return response.json();
+        }).then(function (json) {
+          return dispatch((0, _actions.fetchStories)(json));
+        }).catch(function (ex) {
+          console.log('parsing failed', ex);
+        });
+      }, 2000);
     },
     toggleNewStoryModal: function toggleNewStoryModal(isModalVisible) {
       return dispatch((0, _actions.toggleNewStoryModal)(isModalVisible));
@@ -14169,20 +14068,14 @@ var _constants = __webpack_require__(46);
 
 var ActionTypes = _interopRequireWildcard(_constants);
 
-var _db = __webpack_require__(132);
-
-var _db2 = _interopRequireDefault(_db);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var initialState = [];
 
-var fetchStories = function fetchStories(state) {
-  var newState = [].concat(_toConsumableArray(state), _toConsumableArray(_db2.default.stories));
+var fetchStories = function fetchStories(state, stories) {
+  var newState = [].concat(_toConsumableArray(state), _toConsumableArray(stories));
   return newState;
 };
 
@@ -14198,7 +14091,7 @@ var storiesReducer = function storiesReducer() {
 
   switch (action.type) {
     case ActionTypes.FETCH_STORIES:
-      return fetchStories(state);
+      return fetchStories(state, action.stories);
     case ActionTypes.ADD_STORY:
       return addStory(state, action.payload);
     default:
