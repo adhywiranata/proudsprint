@@ -1,5 +1,6 @@
 import * as ActionTypes from './constants';
 
+// Action Creators
 export const fetchStories = () => ({
   type: ActionTypes.FETCH_STORIES,
   text: 'select all stories',
