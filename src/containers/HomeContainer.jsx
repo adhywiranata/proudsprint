@@ -57,7 +57,9 @@ class HomeContainer extends Component {
           addStory={this.props.addStory}
           incrementNewStoryFormId={this.props.incrementNewStoryFormId}
         />
-      <LoadingDataBanner />
+        {
+          this.props.storiesData.length === 0 && <LoadingDataBanner />
+        }
       </div>
     );
   }
@@ -86,7 +88,7 @@ const mapDispatchToProps = dispatch => ({
           console.log('parsing failed', ex);
         });
       }
-    , 2000);
+    , 5000);
   },
   toggleNewStoryModal: isModalVisible => dispatch(toggleNewStoryModal(isModalVisible)),
   handleChangeNewStoryForm: updatedField => dispatch(handleChangeNewStoryForm(updatedField)),

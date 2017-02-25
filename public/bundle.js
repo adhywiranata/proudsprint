@@ -13928,7 +13928,7 @@ var HomeContainer = function (_Component) {
           addStory: this.props.addStory,
           incrementNewStoryFormId: this.props.incrementNewStoryFormId
         }),
-        _react2.default.createElement(_LoadingDataBanner2.default, null)
+        this.props.storiesData.length === 0 && _react2.default.createElement(_LoadingDataBanner2.default, null)
       );
     }
   }]);
@@ -13962,7 +13962,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
         }).catch(function (ex) {
           console.log('parsing failed', ex);
         });
-      }, 2000);
+      }, 5000);
     },
     toggleNewStoryModal: function toggleNewStoryModal(isModalVisible) {
       return dispatch((0, _actions.toggleNewStoryModal)(isModalVisible));
