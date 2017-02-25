@@ -1,8 +1,8 @@
 import * as ActionTypes from './constants';
 
 // Action Creators
-export const fetchStories = stories => ({
-  type: ActionTypes.FETCH_STORIES,
+export const fetchStoriesSuccess = stories => ({
+  type: ActionTypes.FETCH_STORIES_SUCCESS,
   text: 'select all stories',
   stories,
 });
@@ -35,3 +35,21 @@ export const incrementNewStoryFormId = () => ({
   type: ActionTypes.INCREMENT_NEW_STORY_FORM_ID,
   text: 'new story has been created. add story id by 1',
 });
+
+const fetchStoriesAsync = () =>
+  fetch('http://localhost:3000/stories', {
+    method: 'GET',
+    mode: 'cors',
+  });
+
+export const fetchStories = () =>
+  (dispatch) => {
+    setTimeout(() => {
+      fetchStoriesAsync()
+      .then(response => response.json())
+      .then(json => dispatch(fetchStoriesSuccess(json)))
+      .catch((ex) => {
+        console.log('parsing failed', ex);
+      });
+    }, 2000);
+  };

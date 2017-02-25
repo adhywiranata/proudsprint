@@ -2,7 +2,7 @@ import * as ActionTypes from '../actions/constants';
 
 const initialState = [];
 
-const fetchStories = (state, stories) => {
+const fetchStoriesSuccess = (state, stories) => {
   const newState = [...state, ...stories];
   return newState;
 };
@@ -15,8 +15,8 @@ const addStory = (state, newStory) => {
 
 const storiesReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ActionTypes.FETCH_STORIES:
-      return fetchStories(state, action.stories);
+    case ActionTypes.FETCH_STORIES_SUCCESS:
+      return fetchStoriesSuccess(state, action.stories);
     case ActionTypes.ADD_STORY:
       return addStory(state, action.payload);
     default:

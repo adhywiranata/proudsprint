@@ -5764,6 +5764,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var FETCH_STORIES = exports.FETCH_STORIES = 'FETCH_STORIES';
+var FETCH_STORIES_SUCCESS = exports.FETCH_STORIES_SUCCESS = 'FETCH_STORIES_SUCCESS';
 var FETCH_STORY_DETAILS = exports.FETCH_STORY_DETAILS = 'FETCH_STORY_DETAILS';
 var ADD_STORY = exports.ADD_STORY = 'ADD_STORY';
 
@@ -8774,7 +8775,7 @@ if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.incrementNewStoryFormId = exports.handleChangeNewStoryForm = exports.toggleNewStoryModal = exports.addStory = exports.fetchStoryDetails = exports.fetchStories = undefined;
+exports.fetchStories = exports.incrementNewStoryFormId = exports.handleChangeNewStoryForm = exports.toggleNewStoryModal = exports.addStory = exports.fetchStoryDetails = exports.fetchStoriesSuccess = undefined;
 
 var _constants = __webpack_require__(46);
 
@@ -8783,9 +8784,9 @@ var ActionTypes = _interopRequireWildcard(_constants);
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 // Action Creators
-var fetchStories = exports.fetchStories = function fetchStories(stories) {
+var fetchStoriesSuccess = exports.fetchStoriesSuccess = function fetchStoriesSuccess(stories) {
   return {
-    type: ActionTypes.FETCH_STORIES,
+    type: ActionTypes.FETCH_STORIES_SUCCESS,
     text: 'select all stories',
     stories: stories
   };
@@ -8827,6 +8828,27 @@ var incrementNewStoryFormId = exports.incrementNewStoryFormId = function increme
   return {
     type: ActionTypes.INCREMENT_NEW_STORY_FORM_ID,
     text: 'new story has been created. add story id by 1'
+  };
+};
+
+var fetchStoriesAsync = function fetchStoriesAsync() {
+  return fetch('http://localhost:3000/stories', {
+    method: 'GET',
+    mode: 'cors'
+  });
+};
+
+var fetchStories = exports.fetchStories = function fetchStories() {
+  return function (dispatch) {
+    setTimeout(function () {
+      fetchStoriesAsync().then(function (response) {
+        return response.json();
+      }).then(function (json) {
+        return dispatch(fetchStoriesSuccess(json));
+      }).catch(function (ex) {
+        console.log('parsing failed', ex);
+      });
+    }, 2000);
   };
 };
 
@@ -13943,26 +13965,10 @@ var mapStateToProps = function mapStateToProps(state) {
   };
 };
 
-var fetchStoriesAsync = function fetchStoriesAsync() {
-  return fetch('http://localhost:3000/stories', {
-    method: 'GET',
-    mode: 'cors'
-  });
-};
-
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchStories: function fetchStories() {
-      dispatch((0, _actions.fetchStories)([]));
-      setTimeout(function () {
-        fetchStoriesAsync().then(function (response) {
-          return response.json();
-        }).then(function (json) {
-          return dispatch((0, _actions.fetchStories)(json));
-        }).catch(function (ex) {
-          console.log('parsing failed', ex);
-        });
-      }, 5000);
+      return dispatch((0, _actions.fetchStories)());
     },
     toggleNewStoryModal: function toggleNewStoryModal(isModalVisible) {
       return dispatch((0, _actions.toggleNewStoryModal)(isModalVisible));
@@ -14114,7 +14120,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 var initialState = [];
 
-var fetchStories = function fetchStories(state, stories) {
+var fetchStoriesSuccess = function fetchStoriesSuccess(state, stories) {
   var newState = [].concat(_toConsumableArray(state), _toConsumableArray(stories));
   return newState;
 };
@@ -14130,8 +14136,8 @@ var storiesReducer = function storiesReducer() {
   var action = arguments[1];
 
   switch (action.type) {
-    case ActionTypes.FETCH_STORIES:
-      return fetchStories(state, action.stories);
+    case ActionTypes.FETCH_STORIES_SUCCESS:
+      return fetchStoriesSuccess(state, action.stories);
     case ActionTypes.ADD_STORY:
       return addStory(state, action.payload);
     default:
