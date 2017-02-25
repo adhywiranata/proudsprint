@@ -21,7 +21,7 @@ module.exports = {
         loader: 'file-loader?name=[name].[ext]',
       },
       {
-        test: /\.(png|jpg)$/,
+        test: /\.(png|jpg|gif)$/,
         loader: 'url-loader?limit=25000&name=./public/assets/images/[hash].[ext]',
       },
       {

@@ -10,6 +10,7 @@ import {
 } from '../actions';
 
 import StoriesBoard from '../routes/StoriesBoard';
+import LoadingDataBanner from '../components/reusables/LoadingDataBanner';
 
 class HomeContainer extends Component {
   constructor(props, context) {
@@ -56,6 +57,7 @@ class HomeContainer extends Component {
           addStory={this.props.addStory}
           incrementNewStoryFormId={this.props.incrementNewStoryFormId}
         />
+      <LoadingDataBanner />
       </div>
     );
   }
