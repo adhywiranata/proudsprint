@@ -1,6 +1,6 @@
 import * as ActionTypes from '../actions/constants';
 
-import storiesData from '../../data/stories.json';
+import storiesData from '../../data/db.json';
 
 const initialState = [];
 

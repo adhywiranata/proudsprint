@@ -1,0 +1,118 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "Jose",
+      "email": "jose.sanjose@proudsprint.com",
+      "password": "123123123",
+      "profilePictureUrl": "http://hansensphotography.com/wp-content/uploads/2010/09/professional-business-portraits.png"
+    },
+    {
+      "id": 2,
+      "username": "Mike",
+      "email": "mikey@proudsprint.com",
+      "password": "321321321",
+      "profilePictureUrl": "http://socialpro.miguelvasquez.net/public/avatar/large_johndoe_18gu2qv.jpg"
+    },
+    {
+      "id": 3,
+      "username": "Judie",
+      "email": "jude@proudsprint.com",
+      "password": "321321321",
+      "profilePictureUrl": "http://www.legalwebpro.com/images/user/1101_1200/1139/S_08final2_2.jpg"
+    },
+    {
+      "id": 4,
+      "username": "Robert",
+      "email": "robb.ert@proudsprint.com",
+      "password": "321321321",
+      "profilePictureUrl": "https://s-media-cache-ak0.pinimg.com/236x/f1/77/e3/f177e353bf4ddbd39baae92353349a85.jpg"
+    },
+  ],
+  "stories": [
+    {
+      "id": 1,
+      "category": "icebox",
+      "user": "Jose",
+      "profilePictureUrl": "http://hansensphotography.com/wp-content/uploads/2010/09/professional-business-portraits.png",
+      "story": "Add to Cart should be available on all pages containing a product and several other functionalities",
+      "tags": [
+        "improvement",
+        "bug"
+      ],
+      "createdAt": "20-20-2016"
+    },
+    {
+      "id": 2,
+      "category": "backlog",
+      "user": "Mike",
+      "profilePictureUrl": "http://socialpro.miguelvasquez.net/public/avatar/large_johndoe_18gu2qv.jpg",
+      "story": "Products should contain items dimensions and weight for logistics",
+      "tags": [
+        "improvement",
+        "bug"
+      ],
+      "createdAt": "20-20-2016"
+    },
+    {
+      "id": 3,
+      "category": "current",
+      "user": "Judie",
+      "profilePictureUrl": "http://www.legalwebpro.com/images/user/1101_1200/1139/S_08final2_2.jpg",
+      "story": "User cannot sign up using facebook",
+      "tags": [
+        "improvement",
+        "bug"
+      ],
+      "createdAt": "20-20-2016"
+    },
+    {
+      "id": 4,
+      "category": "delivered",
+      "user": "Robert",
+      "profilePictureUrl": "https://s-media-cache-ak0.pinimg.com/236x/f1/77/e3/f177e353bf4ddbd39baae92353349a85.jpg",
+      "story": "Add to Cart should be available on all pages containing a product and several other functionalities",
+      "tags": [
+        "improvement",
+        "bug"
+      ],
+      "createdAt": "20-20-2016"
+    },
+    {
+      "id": 5,
+      "category": "done",
+      "user": "Mike",
+      "profilePictureUrl": "http://socialpro.miguelvasquez.net/public/avatar/large_johndoe_18gu2qv.jpg",
+      "story": "Add to Cart should be available on all pages containing a product and several other functionalities",
+      "tags": [
+        "improvement",
+        "bug"
+      ],
+      "createdAt": "20-20-2016"
+    },
+    {
+      "id": 6,
+      "category": "backlog",
+      "user": "Judie",
+      "profilePictureUrl": "http://www.legalwebpro.com/images/user/1101_1200/1139/S_08final2_2.jpg",
+      "story": "Products should contain items dimensions and weight for logistics",
+      "tags": [
+        "improvement",
+        "bug"
+      ],
+      "createdAt": "20-20-2016"
+    },
+    {
+      "id": 7,
+      "category": "backlog",
+      "user": "Robert",
+      "profilePictureUrl": "https://s-media-cache-ak0.pinimg.com/236x/f1/77/e3/f177e353bf4ddbd39baae92353349a85.jpg",
+      "story": "Products should contain items dimensions and weight for logistics",
+      "tags": [
+        "improvement",
+        "bug"
+      ],
+      "createdAt": "20-20-2016"
+    }
+  ]
+}
