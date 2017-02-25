@@ -32,8 +32,9 @@
   "stories": [
     {
       "id": 1,
-      "user_id": 1,
       "category": "icebox",
+      "user": "Jose",
+      "profilePictureUrl": "http://hansensphotography.com/wp-content/uploads/2010/09/professional-business-portraits.png",
       "story": "Add to Cart should be available on all pages containing a product and several other functionalities",
       "tags": [
         "improvement",
@@ -43,8 +44,9 @@
     },
     {
       "id": 2,
-      "user_id": 2,
       "category": "backlog",
+      "user": "Mike",
+      "profilePictureUrl": "http://socialpro.miguelvasquez.net/public/avatar/large_johndoe_18gu2qv.jpg",
       "story": "Products should contain items dimensions and weight for logistics",
       "tags": [
         "improvement",
@@ -54,8 +56,9 @@
     },
     {
       "id": 3,
-      "user_id": 1,
       "category": "current",
+      "user": "Judie",
+      "profilePictureUrl": "http://www.legalwebpro.com/images/user/1101_1200/1139/S_08final2_2.jpg",
       "story": "User cannot sign up using facebook",
       "tags": [
         "improvement",
@@ -65,7 +68,6 @@
     },
     {
       "id": 4,
-      "user_id": 3,
       "category": "delivered",
       "user": "Robert",
       "profilePictureUrl": "https://s-media-cache-ak0.pinimg.com/236x/f1/77/e3/f177e353bf4ddbd39baae92353349a85.jpg",
@@ -78,8 +80,9 @@
     },
     {
       "id": 5,
-      "user_id": 2,
       "category": "done",
+      "user": "Mike",
+      "profilePictureUrl": "http://socialpro.miguelvasquez.net/public/avatar/large_johndoe_18gu2qv.jpg",
       "story": "Add to Cart should be available on all pages containing a product and several other functionalities",
       "tags": [
         "improvement",
@@ -89,8 +92,9 @@
     },
     {
       "id": 6,
-      "user_id": 4,
       "category": "backlog",
+      "user": "Judie",
+      "profilePictureUrl": "http://www.legalwebpro.com/images/user/1101_1200/1139/S_08final2_2.jpg",
       "story": "Products should contain items dimensions and weight for logistics",
       "tags": [
         "improvement",
@@ -100,8 +104,9 @@
     },
     {
       "id": 7,
-      "user_id": 4,
       "category": "backlog",
+      "user": "Robert",
+      "profilePictureUrl": "https://s-media-cache-ak0.pinimg.com/236x/f1/77/e3/f177e353bf4ddbd39baae92353349a85.jpg",
       "story": "Products should contain items dimensions and weight for logistics",
       "tags": [
         "improvement",
