@@ -8848,7 +8848,7 @@ var fetchStories = exports.fetchStories = function fetchStories() {
       }).catch(function (ex) {
         console.log('parsing failed', ex);
       });
-    }, 2000);
+    }, 4000);
   };
 };
 
@@ -13466,6 +13466,10 @@ var _2 = _interopRequireDefault(_);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var testEnter = function testEnter() {
+  console.log('masuk enter lhoo');
+};
+
 var AppRouter = function AppRouter() {
   return _react2.default.createElement(
     _reactRouter.Router,
@@ -13478,7 +13482,7 @@ var AppRouter = function AppRouter() {
     ),
     _react2.default.createElement(
       _reactRouter.Route,
-      { path: '/login', component: _AuthContainer2.default },
+      { path: '/login', component: _AuthContainer2.default, onEnter: testEnter },
       _react2.default.createElement(_reactRouter.IndexRoute, { component: _Auth2.default })
     ),
     _react2.default.createElement(_reactRouter.Route, { path: '*', component: _2.default })
@@ -14121,8 +14125,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 var initialState = [];
 
 var fetchStoriesSuccess = function fetchStoriesSuccess(state, stories) {
-  var newState = [].concat(_toConsumableArray(state), _toConsumableArray(stories));
-  return newState;
+  return stories;
 };
 
 var addStory = function addStory(state, newStory) {

@@ -8,13 +8,17 @@ import HomeContainer from '../containers/HomeContainer';
 import Auth from './Auth';
 import Page404 from './Errors/404';
 
+const testEnter = () => {
+  console.log('masuk enter lhoo');
+};
+
 const AppRouter = () => (
   <Router history={browserHistory}>
     <Route path="/" component={MainContainer}>
       <IndexRoute component={HomeContainer} />
       <Route path="about" component={HomeContainer} />
     </Route>
-    <Route path="/login" component={AuthContainer}>
+    <Route path="/login" component={AuthContainer} onEnter={testEnter}>
       <IndexRoute component={Auth} />
     </Route>
     <Route path="*" component={Page404} />

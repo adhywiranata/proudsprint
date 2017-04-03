@@ -51,5 +51,5 @@ export const fetchStories = () =>
       .catch((ex) => {
         console.log('parsing failed', ex);
       });
-    }, 2000);
+    }, 4000);
   };

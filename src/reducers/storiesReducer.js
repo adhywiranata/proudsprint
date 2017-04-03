@@ -2,10 +2,7 @@ import * as ActionTypes from '../actions/constants';
 
 const initialState = [];
 
-const fetchStoriesSuccess = (state, stories) => {
-  const newState = [...state, ...stories];
-  return newState;
-};
+const fetchStoriesSuccess = (state, stories) => stories;
 
 const addStory = (state, newStory) => {
   const newStoryObj = Object.assign({}, newStory);
